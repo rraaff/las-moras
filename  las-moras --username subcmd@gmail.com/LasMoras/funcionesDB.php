@@ -4,6 +4,21 @@ if (DB_USER == NULL || DB_USER == '' || DB_USER == 'DB_USER'){
 	include("constantes.php");
 }
 
+//==========================================
+//	ESCAPE DANGEROUS SQL CHARACTERS
+//==========================================
+function quote_smart($value, $handle) {
+
+	if (get_magic_quotes_gpc()) {
+		$value = stripslashes($value);
+	}
+
+	if (!is_numeric($value)) {
+		$value = "'" . mysql_real_escape_string($value, $handle) . "'";
+	}
+	return $value;
+}
+
 Function getConnection(){
 	//Por ahora no uso password para conectarme a la base.
 	$connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la conexion");
