@@ -1,5 +1,5 @@
 <?php 
-	header("Content-type: text/html; charset=iso-8859-1");
+	header("Content-type: text/html; charset=utf-8");
 	require("funcionesDB.php");
 	
 	// Inicio conexion
@@ -32,24 +32,27 @@
 					$userID = $user['id'];
 					$insertTicket = "INSERT INTO TICKETS (systemuserID, ticket) VALUES ($userID, $ticket)";
 					$res = mysql_query($insertTicket,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
+					$output = '{ "success": "yes", "error": "" }';
 				} else {
 					// Si ya fue cargado, doy mensaje de error
-					$errorMessage = "Ticket ya cargado";
+					$output = '{ "success": "no", "error": "Ticket ya cargado." }';
 				}
 			} else {
-				$errorMessage = "Error de conexion";
+				$output = '{ "success": "no", "error": "Error generico." }';
 			}
 		} else {
 // 			no esta registrado
-			$errorMessage = "No esta registrado";
+			$output = '{ "success": "no", "error": "No esta registrado." }';
 		}
 	} else {
-		$errorMessage = "Error de conexion";
+		$output = '{ "success": "no", "error": "Error generico." }';
 	}
 	
 	// Cierre conexion
 	mysql_close($connection);
+	//validar todo lo que haga falta, campo a campo
+	
+	$output = str_replace("\r", "", $output);
+	$output = str_replace("\n", "", $output);
+	echo $output;
 ?>
-validar todo lo que haga falta, campo a campo
-<?PHP print $ticket;?><br>
-<ok><?PHP print $errorMessage;?></ok>
