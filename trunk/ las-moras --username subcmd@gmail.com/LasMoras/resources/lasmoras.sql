@@ -9,6 +9,7 @@ CREATE  TABLE `SYSTEMUSER` (
   PRIMARY KEY (`id`) ,
   INDEX `UNAME` (`usuario` ASC) );
   
+  
 CREATE  TABLE `TICKETS` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `systemuserID` INT NOT NULL ,
@@ -16,11 +17,15 @@ CREATE  TABLE `TICKETS` (
   `ganador` INT NULL ,
   PRIMARY KEY (`id`) );
   
-// hace falta guardar los logins?
+  
 CREATE  TABLE `INSTANT_WIN` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `ticketID` INT NOT NULL ,
-  `description` VARCHAR(400) NULL ,
-  `horaInicio` INT NULL ,
-  `horaFin` INT NULL ,
+  `ticketID` INT NULL ,
+  `descripcion` VARCHAR(400) NOT NULL ,
+  `inicio` DATETIME NOT NULL,
+  `fin` DATETIME NOT NULL,
   PRIMARY KEY (`id`) );
+  
+ALTER TABLE `SYSTEMUSER` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE `TICKETS` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE `INSTANT_WIN` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;

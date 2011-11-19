@@ -12,6 +12,7 @@
  */
 
 #basic-modal-registro {display:none;}
+#basic-modal-cargaCodigo {display:none;}
 
 /* Overlay */
 #simplemodal-overlay {background-color:#000; cursor:wait;}

@@ -1,5 +1,5 @@
 <?php 
-	header("Content-type: text/html; charset=iso-8859-1");
+	header("Content-type: text/html; charset=utf-8");
 	require("funcionesDB.php");
 	
 	// Inicio conexion
@@ -20,16 +20,26 @@
 	$usuario = quote_smart($usuario, $connection);
 	$password = quote_smart($password, $connection);
 	
-	$query = "INSERT INTO SYSTEMUSER (nombre, apellido, documento, email, usuario, password) 
-		VALUES ($nombre, $apellido, $documento, $email, $usuario, $password)";
-	$res = mysql_query($query,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
-	
+	$SQL = "SELECT * FROM SYSTEMUSER WHERE usuario = $usuario";
+	$result = mysql_query($SQL);
+	$num_rows = mysql_num_rows($result);
+	if ($result) {
+		if ($num_rows > 0) {
+			$output = '{ "success": "no", "error": "El nombre de usuario ya esta registrado." }';
+		} else {
+			$query = "INSERT INTO SYSTEMUSER (nombre, apellido, documento, email, usuario, password)
+			VALUES ($nombre, $apellido, $documento, $email, $usuario, $password)";
+			$res = mysql_query($query,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
+			$output = '{ "success": "yes", "error": "" }';
+		}
+	} else {
+		$output = '{ "success": "no", "error": "Error generico." }';
+	}
 	// Cierre conexion
 	closeConnection($connection);
 // validar todo lo que haga falta, campo a campo
 // usuario ya existente	
 // password en md5?
-$output = '{ "success": "yes", "welcome": "Welcome" }';
 // } else {
 // $output = '{ "success": "no", "message": "This is not working" }';
 // }

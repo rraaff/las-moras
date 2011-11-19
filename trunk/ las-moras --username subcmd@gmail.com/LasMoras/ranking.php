@@ -1,9 +1,9 @@
 <?php 
-	header("Content-type: text/html; charset=iso-8859-1");
+	header("Content-type: text/html; charset=utf-8");
 	
 	require("funcionesDB.php");
 	
-	$query = "SELECT rbKey, rbContext FROM RESOURCEBUNDLE";
+	$query = "SELECT nombre, apellido FROM SYSTEMUSER";
 	$res = doSelect($query);
 ?>
 <html>
@@ -17,8 +17,8 @@ xcxc
 ?>
 	<tr>
 		<td><?php echo $i ?></td>
-		<td><?php echo $user['rbKey'] ?></td>
-		<td><?php echo $user['rbContext'] ?></td>
+		<td><?php echo $user['nombre'] ?></td>
+		<td><?php echo $user['apellido'] ?></td>
 	</tr>
 <?php 		
 		$i--;
