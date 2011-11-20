@@ -9,7 +9,10 @@ CREATE  TABLE `BOUSER` (
   INDEX `BOUNAME` (`usuario` ASC) );
 
 INSERT INTO BOUSER(nombre, apellido, email, usuario, password)
-VALUES ('marcos rafael', 'godoy', 'aas@ssdd.com', 'godoy'); 
+VALUES ('marcos rafael', 'godoy', 'aas@ssdd.com', 'godoy', 'godoy'); 
+
+INSERT INTO BOUSER(nombre, apellido, email, usuario, password)
+VALUES ('pablo', 'mendoza', 'aas@ssdd.com', 'mendoza', 'mendoza'); 
 
 CREATE  TABLE `SYSTEMUSER` (
   `id` INT NOT NULL AUTO_INCREMENT ,
@@ -22,14 +25,13 @@ CREATE  TABLE `SYSTEMUSER` (
   PRIMARY KEY (`id`) ,
   INDEX `UNAME` (`usuario` ASC) );
   
-  
 CREATE  TABLE `TICKETS` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `systemuserID` INT NOT NULL ,
   `ticket` VARCHAR(255) NULL ,
+  `fechaCarga` DATETIME NOT NULL,
   `ganador` INT NULL ,
   PRIMARY KEY (`id`) );
-  
   
 CREATE  TABLE `INSTANT_WIN` (
   `id` INT NOT NULL AUTO_INCREMENT ,
@@ -37,6 +39,10 @@ CREATE  TABLE `INSTANT_WIN` (
   `descripcion` VARCHAR(400) NOT NULL ,
   `inicio` DATETIME NOT NULL,
   `fin` DATETIME NOT NULL,
+  `name` VARCHAR(100) NOT NULL,
+  `type` VARCHAR(30) NOT NULL,
+  `size` INT NOT NULL,
+  `content` MEDIUMBLOB NOT NULL,
   PRIMARY KEY (`id`) );
   
 ALTER TABLE `SYSTEMUSER` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
