@@ -3,7 +3,7 @@
 	require("funcionesDB.php");
 	require("boCheckLogin.php");
 	
-	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+	if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_FILES['imagen']['size'] > 0){
 		// Inicio conexion
 		$connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la conexion");
 		mysql_select_db(DB_NAME,$connection);
@@ -16,17 +16,29 @@
 		$inicio = quote_smart($inicio, $connection);
 		$fin = quote_smart($fin, $connection);
 		
-		$insertTicket = "INSERT INTO INSTANT_WIN (descripcion, inicio, fin) VALUES ($descripcion, $inicio, $fin)";
+		$fileName = quote_smart($_FILES['imagen']['name'], $connection);
+		$tmpName  = $_FILES['imagen']['tmp_name'];
+		$fileSize = quote_smart($_FILES['imagen']['size'], $connection);
+		$fileType = quote_smart($_FILES['imagen']['type'], $connection);
+		$fp      = fopen($tmpName, 'r');
+		$content = fread($fp, filesize($tmpName));
+		$content = addslashes($content);
+		fclose($fp);
+		
+		$insertTicket = "INSERT INTO INSTANT_WIN (descripcion, inicio, fin, name, type, size, content) 
+			VALUES ($descripcion, $inicio, $fin, $fileName, $fileType, $fileSize, '$content')";
 		$res = mysql_query($insertTicket,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
 		
 		mysql_close($connection);
-	}
+		
+		header("Location: boPremiosInstantaneos.php");
+	} else {
 	
-	// TODO estados, ganadores, etc
-	$query = "SELECT IW.*, UNIX_TIMESTAMP(IW.FIN) FIN_UNIX, TI.ticket, SU.id systemUserID, SU.nombre || ' ' || SU.apellido Winner
+	$query = "SELECT IW.*, UNIX_TIMESTAMP(IW.FIN) FIN_UNIX, TI.ticket, SU.id systemUserID, SU.nombre, SU.apellido
 		FROM INSTANT_WIN IW 
 		LEFT JOIN TICKETS TI ON (IW.ticketID = TI.id) 		
-		LEFT JOIN SYSTEMUSER SU ON (TI.systemUserID = SU.id)";
+		LEFT JOIN SYSTEMUSER SU ON (TI.systemUserID = SU.id) 
+		ORDER BY IW.inicio";
 	$res = doSelect($query);
 ?>
 <!DOCTYPE html>
@@ -47,7 +59,8 @@
 </head>
 <body>
 
-	<form action="boPremiosInstantaneos.php" name="altaIWForm" id="altaIWForm" method="POST">
+	<form action="boPremiosInstantaneos.php" name="altaIWForm" id="altaIWForm" method="POST" enctype="multipart/form-data">
+		<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 		<table>
 			<tr><td>Descripcion</td><td><input type="text" name="descripcion"></td></tr>
 			<tr><td>Imagen</td><td><input type="file" name="imagen" id="imagen"></td></tr>
@@ -84,13 +97,15 @@
 				    echo 'Vencido';
 				}
 			} else {
-				echo 'Asignado';
+				echo 'Adjudicado';
 			}
 		?></td>
 		<td><?php 
-			if (!is_null($iw['winner'])) {
-				echo $iw['winner'];
-			} else {
+			if (!is_null($iw['nombre'])) { ?>
+				<a href="javascript:showWinner('<?php echo $iw['ticketID'];?>')">
+				<?php echo $iw['nombre'];?> <?php echo $iw['apellido'];?> 
+				</a>
+			<?php } else {
 				echo '-';
 			}
 		?></td>
@@ -106,6 +121,17 @@
 <script type='text/javascript' src='js/jquery-ui-1.8.16.custom.min.js'></script>
 <script type='text/javascript' src='js/jquery-ui-timepicker-addon.js'></script>
 <script>
+
+function showWinner(ticketID) {
+	$.get("getTicketWinner.php?ticketID=" + ticketID, function(data){
+		// create a modal dialog with the data
+		$(data).modal({
+			overlayId: 'simplemodal-overlay',
+			containerId: 'simplemodal-container'
+		});
+	});
+}
+
 $(document).ready(
 		function(){
 			$('#inicio').datetimepicker({
@@ -133,3 +159,4 @@ $(document).ready(
 </script>
 </body>
 </html>
+<?php } ?>

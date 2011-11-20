@@ -106,7 +106,11 @@ function postRegisto(data) {
 
 function postCargaCodigo(data) {
 	if (data.success == 'yes') {
-		$.modal.close();
+		if (data.win == 'yes') {
+			alert('te ganaste un ' + data.iw_desc);
+		} else {
+			alert('segui participando');
+		}
 	} else {
 		alert(data.error);
 	}

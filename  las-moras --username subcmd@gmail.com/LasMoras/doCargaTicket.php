@@ -30,9 +30,22 @@
 				if ($num_rows_tickets == 0) {
 					$user = mysql_fetch_array($result);
 					$userID = $user['id'];
-					$insertTicket = "INSERT INTO TICKETS (systemuserID, ticket) VALUES ($userID, $ticket)";
+					$insertTicket = "INSERT INTO TICKETS (systemuserID, ticket, fechaCarga) VALUES ($userID, $ticket, NOW() )";
 					$res = mysql_query($insertTicket,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
-					$output = '{ "success": "yes", "error": "" }';
+					$returnInsert = mysql_insert_id($connection);
+					
+					$updateInstantWin = "UPDATE INSTANT_WIN SET ticketID = $returnInsert WHERE NOW() >= inicio AND NOW() <= FIN AND ticketID IS NULL LIMIT 1";
+					mysql_query($updateInstantWin,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
+					// si gano
+					if (mysql_affected_rows() == 1) {
+						$query = "SELECT id, descripcion FROM INSTANT_WIN WHERE ticketID = $returnInsert";
+						$result_win = mysql_fetch_array(mysql_query($query));
+						$id_win = $result_win['id'];
+						$descripcion_win = $result_win['descripcion'];
+						$output = '{ "success": "yes", "error": "" , "win": "yes", "iw_id": "' . $id_win . '", "iw_desc": "' . $descripcion_win . '"}';
+					} else {
+						$output = '{ "success": "yes", "error": "" }';
+					}
 				} else {
 					// Si ya fue cargado, doy mensaje de error
 					$output = '{ "success": "no", "error": "Ticket ya cargado." }';
