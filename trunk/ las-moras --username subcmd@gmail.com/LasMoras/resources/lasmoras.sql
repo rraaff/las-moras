@@ -1,3 +1,16 @@
+CREATE  TABLE `BOUSER` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `nombre` VARCHAR(255) NULL ,
+  `apellido` VARCHAR(255) NULL ,
+  `email` VARCHAR(150) NULL ,
+  `usuario` VARCHAR(100) NULL ,
+  `password` VARCHAR(4000) NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `BOUNAME` (`usuario` ASC) );
+
+INSERT INTO BOUSER(nombre, apellido, email, usuario, password)
+VALUES ('marcos rafael', 'godoy', 'aas@ssdd.com', 'godoy'); 
+
 CREATE  TABLE `SYSTEMUSER` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `nombre` VARCHAR(255) NULL ,
