@@ -80,8 +80,7 @@
 		<td>Ganador</td>
 	</tr>
 <?php
-	$todays_date = date("Y-m-d");
-	$today = strtotime($todays_date);
+	$today = time();
 	while ($iw = mysql_fetch_array($res)){
 ?>
 	<tr>
