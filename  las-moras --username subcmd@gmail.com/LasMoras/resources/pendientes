@@ -1,0 +1,19 @@
+BackOffice
+
+Usuarios dados de alta por la base con un flag distinto
+Login distinto
+Chequeo de logins en las paginas de estos
+Completar abm de iw con imagen
+Hacer pagina de listado de usuarios, logins, etc
+
+Guardar hora de login de usuarios (otra tabla)
+Agregar datetime a los tickets
+
+// Web
+Envio de emails
+Recordatorio de password por email (o blanqueo)
+Validaciones por todos lados
+Uso de iw
+Compartir por facebook
+Compartir por tweeter
+Compartir por email
