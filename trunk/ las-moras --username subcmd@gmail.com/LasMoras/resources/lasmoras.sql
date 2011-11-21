@@ -22,6 +22,7 @@ CREATE  TABLE `SYSTEMUSER` (
   `email` VARCHAR(150) NULL ,
   `usuario` VARCHAR(100) NULL ,
   `password` VARCHAR(4000) NULL ,
+  `fechaCreacion` DATETIME NOT NULL,
   PRIMARY KEY (`id`) ,
   INDEX `UNAME` (`usuario` ASC) );
   
