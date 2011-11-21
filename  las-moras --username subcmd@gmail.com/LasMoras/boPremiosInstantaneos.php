@@ -78,6 +78,7 @@
 		<td>Fin</td>
 		<td>Estado</td>
 		<td>Ganador</td>
+		<td>Borrar</td>
 	</tr>
 <?php
 	$today = time();
@@ -105,6 +106,21 @@
 				<?php echo $iw['nombre'];?> <?php echo $iw['apellido'];?> 
 				</a>
 			<?php } else {
+				echo '-';
+			}
+		?></td>
+		<td><?php 
+			if (is_null($iw['ticketID'])) {
+				if ($iw['FIN_UNIX'] > $today) {
+     				?>
+     				<a href="doBorrarPremioInstantaneo.php?id=<?php echo $iw['id'];?>">
+						Borrar 
+					</a>
+     				<?php 
+				} else {
+				    echo '-';
+				}
+			} else {
 				echo '-';
 			}
 		?></td>

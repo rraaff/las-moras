@@ -13,6 +13,8 @@ Hola <?php echo($_SESSION['boNombre']);?> <?php echo($_SESSION['boApellido']);?>
 
 <A HREF = "boPremiosInstantaneos.php">Premios</A><br>
 
+<A HREF = "boSystemUsers.php">Usuarios</A><br>
+
 <A HREF = "boLogout.php">Log out</A><br>
 </body>
 </html>

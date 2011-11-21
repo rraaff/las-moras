@@ -14,7 +14,7 @@ $id = quote_smart($id, $connection);
 $query = "SELECT name, type, size, content " .
          "FROM INSTANT_WIN WHERE id = $id";
 
-$res = doSelect($query);
+$res = mysql_query($query, $connection);
 $iw = mysql_fetch_array($res);
 
 // Cierre de conexion

@@ -27,8 +27,8 @@
 		if ($num_rows > 0) {
 			$output = '{ "success": "no", "error": "El nombre de usuario ya esta registrado." }';
 		} else {
-			$query = "INSERT INTO SYSTEMUSER (nombre, apellido, documento, email, usuario, password)
-			VALUES ($nombre, $apellido, $documento, $email, $usuario, $password)";
+			$query = "INSERT INTO SYSTEMUSER (nombre, apellido, documento, email, usuario, password, fechaCreacion)
+			VALUES ($nombre, $apellido, $documento, $email, $usuario, $password, NOW() )";
 			$res = mysql_query($query,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
 			$output = '{ "success": "yes", "error": "" }';
 		}
