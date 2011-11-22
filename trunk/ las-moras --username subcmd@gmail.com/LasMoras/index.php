@@ -15,7 +15,7 @@
 <link type='text/css' href='css/sm_basic_ie.css' rel='stylesheet' media='screen' />
 <![endif]-->
 <!-- JS files are loaded at the bottom of the page -->
-<script>
+<script type='text/javascript'>
 <?php if (isset($_SESSION['Login']) && $_SESSION['Login'] == 1) { ?>
 	var logged = true;
 <?php } else { ?>
@@ -82,17 +82,18 @@
 </div>
 
 <!-- Load jQuery, SimpleModal and Basic JS files -->
-<script type='text/javascript' src='js/jquery-1.7.min.js'></script>
-<script type='text/javascript' src='js/jquery.form.js'></script>
-<script type='text/javascript' src='js/jquery.simplemodal-1.3.5.js'></script>
-<script>
+<script src='js/jquery-1.7.min.js'></script>
+<script src='js/jquery.form.js'></script>
+<script src='js/jquery.simplemodal-1.3.5.js'></script>
+<script lang="javascript">
+
 
 jQuery(function ($) {
 	$('#registro').click(function (e) {
 		$('#basic-modal-registro').modal(
 			{
 			overlayId: 'registro-overlay',
-			containerId: 'registro-container',
+			containerId: 'registro-container'
 			});
 		return false;
 	});
@@ -101,12 +102,12 @@ jQuery(function ($) {
 		if (logged) {
 			$('#basic-modal-cargaCodigo').modal({
 				overlayId: 'cargaCodigo-overlay',
-				containerId: 'cargaCodigo-container',
+				containerId: 'cargaCodigo-container'
 			});
 		} else {
 			$('#basic-modal-login').modal({
 				overlayId: 'login-overlay',
-				containerId: 'login-container',
+				containerId: 'login-container'
 			});
 		}
 		return true;
@@ -115,11 +116,12 @@ jQuery(function ($) {
 	$('#recordarPassword').click(function (e) {
 		$('#basic-modal-recordarPassword').modal({
 			overlayId: 'recordarPassword-overlay',
-			containerId: 'recordarPassword-container',
+			containerId: 'recordarPassword-container'
 		});
 		return false;
 	});
 });
+
 
 $(document).ready(
 	function(){
@@ -144,7 +146,8 @@ $(document).ready(
 			success: postCargaCodigo
 			});
 	}
-)
+);
+
 function postRegisto(data) {
 	if (data.success == 'yes') {
 		$.modal.close();
@@ -171,7 +174,7 @@ function register() {
 	$('#basic-modal-registro').modal(
 		{
 		overlayId: 'registro-overlay',
-		containerId: 'registro-container',
+		containerId: 'registro-container'
 	});
 }
 
@@ -179,7 +182,7 @@ function recordarPassword() {
 	$.modal.close();
 	$('#basic-modal-recordarPassword').modal({
 		overlayId: 'recordarPassword-overlay',
-		containerId: 'recordarPassword-container',
+		containerId: 'recordarPassword-container'
 	});
 }
 
