@@ -12,15 +12,50 @@
  */
 
 #basic-modal-registro {display:none;}
+#basic-modal-login {display:none;}
 #basic-modal-cargaCodigo {display:none;}
+#basic-modal-recordarPassword {display:none;}
 
+/* Login */
 /* Overlay */
-#simplemodal-overlay {background-color:#000; cursor:wait;}
-
+#login-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#simplemodal-container {height:360px; width:600px; color:#bbb; background-color:#333; border:0px; padding:12px;}
-#simplemodal-container .simplemodal-data {padding:8px;}
-#simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
-#simplemodal-container a {color:#ddd;}
-#simplemodal-container a.modalCloseImg {background:url(../img/basic/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
-#simplemodal-container h3 {color:#84b8d9;}
+#login-container {height:0px; width:600px; color:#bbb; background-color:#333; border:0px; padding:12px;}
+#login-container .simplemodal-data {padding:8px;}
+#login-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#login-container a {color:#ddd;}
+#login-container a.modalCloseImg {background:url(../img/basic/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#login-container h3 {color:#84b8d9;}
+
+/* Carga codigo */
+/* Overlay */
+#cargaCodigo-overlay {background-color:#000; cursor:wait;}
+/* Container */
+#cargaCodigo-container {height:120px; width:400px; color:#bbb; background-color:#333; border:0px; padding:12px;}
+#cargaCodigo-container .simplemodal-data {padding:8px;}
+#cargaCodigo-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#cargaCodigo-container a {color:#ddd;}
+#cargaCodigo-container a.modalCloseImg {background:url(../img/basic/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#cargaCodigo-container h3 {color:#84b8d9;}
+
+/* Registro */
+/* Overlay */
+#registro-overlay {background-color:#000; cursor:wait;}
+/* Container */
+#registro-container {height:360px; width:400px; color:#bbb; background-color:#333; border:0px; padding:12px;}
+#registro-container .simplemodal-data {padding:8px;}
+#registro-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#registro-container a {color:#ddd;}
+#registro-container a.modalCloseImg {background:url(../img/basic/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#registro-container h3 {color:#84b8d9;}
+
+/* Recordar password */
+/* Overlay */
+#recordarPassword-overlay {background-color:#000; cursor:wait;}
+/* Container */
+#recordarPassword-container {height:360px; width:400px; color:#bbb; background-color:#333; border:0px; padding:12px;}
+#recordarPassword-container .simplemodal-data {padding:8px;}
+#recordarPassword-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#recordarPassword-container a {color:#ddd;}
+#recordarPassword-container a.modalCloseImg {background:url(../img/basic/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#recordarPassword-container h3 {color:#84b8d9;}
