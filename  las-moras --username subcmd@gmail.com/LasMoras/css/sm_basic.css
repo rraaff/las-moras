@@ -20,7 +20,8 @@
 /* Overlay */
 #login-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#login-container {height:0px; width:600px; color:#bbb; background-color:#333; border:0px; padding:12px;}
+#login-container {height:0px; width:600px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
+     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
 #login-container .simplemodal-data {padding:8px;}
 #login-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #login-container a {color:#ddd;}
@@ -31,7 +32,8 @@
 /* Overlay */
 #cargaCodigo-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#cargaCodigo-container {height:120px; width:400px; color:#bbb; background-color:#333; border:0px; padding:12px;}
+#cargaCodigo-container {height:120px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
+     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
 #cargaCodigo-container .simplemodal-data {padding:8px;}
 #cargaCodigo-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #cargaCodigo-container a {color:#ddd;}
@@ -42,7 +44,8 @@
 /* Overlay */
 #registro-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#registro-container {height:360px; width:400px; color:#bbb; background-color:#333; border:0px; padding:12px;}
+#registro-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
+     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
 #registro-container .simplemodal-data {padding:8px;}
 #registro-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #registro-container a {color:#ddd;}
@@ -53,7 +56,8 @@
 /* Overlay */
 #recordarPassword-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#recordarPassword-container {height:360px; width:400px; color:#bbb; background-color:#333; border:0px; padding:12px;}
+#recordarPassword-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
+     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
 #recordarPassword-container .simplemodal-data {padding:8px;}
 #recordarPassword-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #recordarPassword-container a {color:#ddd;}
