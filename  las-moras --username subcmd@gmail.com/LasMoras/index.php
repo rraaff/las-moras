@@ -41,29 +41,29 @@
 	</div>
 </div>
 <!-- preload the images -->
-<div style='display:none'>
-	<img src='img/basic/x.png' alt='' />
-	<img src="images/buttons/cargaElCodigo.gif">
-	<img src="images/buttons/miraLosPremios.gif">
-	<img src="images/buttons/fb.gif">
-	<img src="images/buttons/tw.gif">
-	<img src="images/buttons/email.gif">
+<div style="display:none">
+	<img src="img/basic/x.png" alt="" />
+	<img src="images/buttons/cargaElCodigo.gif" alt="" />
+	<img src="images/buttons/miraLosPremios.gif" alt="" />
+	<img src="images/buttons/fb.gif" alt="" />
+	<img src="images/buttons/tw.gif" alt="" />
+	<img src="images/buttons/email.gif" alt="" />
 </div>
 
 <a href='#' class='registrate' id="registro">Registrate</a>
 <a href='#' class='recordarPassword' id="recordarPassword">Recordar password</a>
 
-<!-- modal registro -->
+<!-- modal registro display:block; -->
 <div id="basic-modal-registro">
 	<form action="doRegistro.php" name="registroForm" id="registroForm" method="POST">
-		<table>
-			<tr><td>Nombre</td><td><input type="text" name="nombre"></td></tr>
-			<tr><td>Apellido</td><td><input type="text" name="apellido"></td></tr>
-			<tr><td>Documento</td><td><input type="text" name="documento"></td></tr>
-			<tr><td>Email</td><td><input type="text" name="email"></td></tr>
-			<tr><td>EDAD</td><td><input type="text" name="edad"></td></tr>
-			<tr><td>Usuario</td><td><input type="text" name="usuario"></td></tr>
-			<tr><td>Password</td><td><input type="text" name="password"></td></tr>
+		<table border="1" cellpadding="0" cellspacing="0">
+			<tr><td><input type="text" name="nombre"></td></tr>
+			<tr><td><input type="text" name="apellido"></td></tr>
+			<tr><td><input type="text" name="documento"></td></tr>
+			<tr><td><input type="text" name="email"></td></tr>
+			<tr><td><input type="text" name="edad"></td></tr>
+			<tr><td><input type="text" name="usuario"></td></tr>
+			<tr><td><input type="text" name="password"></td></tr>
 			<tr><td colspan="2"><input type="submit"></td></tr>
 		</table>
 	</form>
@@ -72,11 +72,13 @@
 <!-- modal carga codigo -->
 <div id="basic-modal-login">
 	<form action="doLogin.php" name="loginForm" id="loginForm" method="POST">
-		<table>
-			<tr><td>Usuario</td><td><input type="text" name="usuario"></td></tr>
-			<tr><td>Password</td><td><input type="text" name="password"></td></tr>
-			<tr><td colspan="2"><input type="submit"></td></tr>
-			<tr><td><a href="javascript:register()">No esta registrado</a></td><td><a href="javascript:recordarPassword()">No recuerda el password</a></td></tr>
+		<table width="380" border="0" bordercolor="#00FF00" cellpadding="0" cellspacing="0">
+			<tr><td width="85" height="30"></td><td width="295"><input type="text" name="usuario"></td></tr>
+			<tr><td colspan="2" height="16"></td></tr>
+			<tr><td></td><td><input type="text" name="password"></td></tr>
+			<tr><td colspan="2" height="10"></td></tr>
+			<tr><td></td><td height="120" align="right"><a href="javascript:loginForm.submit();"><img src="images/buttons/enviarDatos.png" width="158" height="47" border="0"></a></td></tr>
+			<tr><td colspan="2"><table cellpadding="0" cellspacing="0"><tr><td>SI NO EST&Aacute;S REGISTRADO, <br><a href="javascript:register()">HAC&Eacute; CLIC AC&Aacute;.</a></td><td width="30"></td><td>¿OLVIDASTE TU PASSWORD?,<br><a href="javascript:recordarPassword()">HAC&Eacute; CLIC AC&Aacute;.</a></td></tr></table></td></tr>
 		</table>
 	</form>
 </div>
@@ -85,8 +87,8 @@
 <div id="basic-modal-cargaCodigo">
 	<form action="doCargaTicket.php" name="ticketForm" id="ticketForm" method="POST">
 		<table>
-			<tr><td>Ticket</td><td><input type="text" name="codigo"></td></tr>
-			<tr><td colspan="2"><input type="submit"></td></tr>
+			<tr><td><input type="text" name="codigo"></td></tr>
+			<tr><td><input type="submit" style="background-image:url(images/buttons/cargarCodigo.png); width:156px; height:43px;"></td></tr>
 		</table>
 	</form>
 </div>
