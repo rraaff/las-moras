@@ -2,12 +2,16 @@
 	header("Content-type: text/html; charset=utf-8");
 	session_start();
 ?>
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html;  charset=utf-8">
-<title>Las Moras</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Finca Las Moras - Premia tu forma de disfrutar la vida</title>
+<meta name="keywords" content="Vino, Tinto, Blanco, Finca Las Moras, Beber con moderación" />
+<meta name="description" content="Finca Las Moras premia tu forma de disfrutar la vida" />
+<meta name="AUTHOR" content="That Day in London - Agencia Interactiva & Diseño - para Publiquest" />
+<link rel="icon" href="./favicon.ico" type="icon"/>
 <!-- Contact Form CSS files -->
 <link type='text/css' href='css/sm_basic.css' rel='stylesheet' media='screen' />
 <!-- IE6 "fix" for the close png image -->
@@ -15,7 +19,12 @@
 <link type='text/css' href='css/sm_basic_ie.css' rel='stylesheet' media='screen' />
 <![endif]-->
 <!-- JS files are loaded at the bottom of the page -->
+<script src="js/popup.js" type="text/javascript"></script>
 <script type='text/javascript'>
+	function openLegal(){
+		openPopupWindow('basesycondiciones.html', 481, 460, 0, 0, false, false, 'bases', false);
+	}
+
 <?php if (isset($_SESSION['Login']) && $_SESSION['Login'] == 1) { ?>
 	var logged = true;
 <?php } else { ?>
@@ -24,14 +33,24 @@
 </script>
 </head>
 <body>
-
+<div id="centralContent">
+	<div id="promoButtons"><a href='#' class='cargaCodigo' id="cargaCodigo"><img src="images/buttons/cargaElCodigo.gif" width="336" height="45" border="0"></a><a href="premios.html"><img src="images/buttons/miraLosPremios.gif" width="336" height="45" border="0"></a></div>
+	<div id="footer">
+		<div id="legal"><a href="javascript:openLegal();">Bases y condiciones del sitio</a></div>
+		<div id="socialHub"><a href="#"><img src="images/buttons/fb.gif" width="38" height="30" border="0"></a><a href="#"><img src="images/buttons/tw.gif" width="36" height="30" border="0"></a><a href="#"><img src="images/buttons/email.gif" width="39" height="30" border="0"></a></div>
+	</div>
+</div>
 <!-- preload the images -->
 <div style='display:none'>
 	<img src='img/basic/x.png' alt='' />
+	<img src="images/buttons/cargaElCodigo.gif">
+	<img src="images/buttons/miraLosPremios.gif">
+	<img src="images/buttons/fb.gif">
+	<img src="images/buttons/tw.gif">
+	<img src="images/buttons/email.gif">
 </div>
 
 <a href='#' class='registrate' id="registro">Registrate</a>
-<a href='#' class='cargaCodigo' id="cargaCodigo">Carga tu codigo</a>
 <a href='#' class='recordarPassword' id="recordarPassword">Recordar password</a>
 
 <!-- modal registro -->
@@ -42,6 +61,7 @@
 			<tr><td>Apellido</td><td><input type="text" name="apellido"></td></tr>
 			<tr><td>Documento</td><td><input type="text" name="documento"></td></tr>
 			<tr><td>Email</td><td><input type="text" name="email"></td></tr>
+			<tr><td>EDAD</td><td><input type="text" name="edad"></td></tr>
 			<tr><td>Usuario</td><td><input type="text" name="usuario"></td></tr>
 			<tr><td>Password</td><td><input type="text" name="password"></td></tr>
 			<tr><td colspan="2"><input type="submit"></td></tr>
@@ -200,14 +220,6 @@ function postCargaCodigo(data) {
 		} else {
 			alert('segui participando');
 		}
-	} else {
-		alert(data.error);
-	}
-}
-
-function postRecordarPassword(data) {
-	if (data.success == 'yes') {
-		alert('te mandamos el email');
 	} else {
 		alert(data.error);
 	}
