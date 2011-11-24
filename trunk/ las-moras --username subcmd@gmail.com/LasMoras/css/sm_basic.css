@@ -14,7 +14,56 @@ body{
 	background-image: url(../images/fondoFE.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
+	margin: 0px;
+	padding: 0px;
 }
+#centralContent {
+	height: 600px;
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+#promoButtons {
+	height: 90px;
+	width: 336px;
+	margin-top: 400px;
+	margin-right: 239px;
+	margin-left: 325px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-bottom: 0px;
+}
+#centralContent #footer {
+	margin-top: 70px;
+}
+#centralContent #footer #legal {
+	font-family: "Univers LT", Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #464646;
+	width: 200px;
+	float: left;
+	margin-top: 12px;
+	margin-left: 395px;
+	text-align: center;
+}
+#centralContent #footer #legal a {
+	color: #464646;
+}
+#centralContent #footer #legal a:hover, #centralContent #footer #legal a:active, #centralContent #footer #legal a:visited {
+	text-decoration: underline;
+}
+#centralContent #footer #socialHub {
+	float: right;
+	height: 30px;
+	width: 113px;
+	margin-right: 14px;
+}
+
 #basic-modal-registro {display:none;}
 #basic-modal-login {display:none;}
 #basic-modal-cargaCodigo {display:none;}
