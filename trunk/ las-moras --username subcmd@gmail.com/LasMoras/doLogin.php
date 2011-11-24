@@ -9,11 +9,9 @@
 
 	$usuario = $_POST['usuario'];
 	$password = $_POST['password'];
-	$ticket = $_POST['codigo'];
 	
 	$usuario = quote_smart($usuario, $connection);
 	$password = quote_smart($password, $connection);
-	$ticket = quote_smart($ticket, $connection);
 	
 	$SQL = "SELECT * FROM SYSTEMUSER WHERE usuario = $usuario AND password = $password";
 	$result = mysql_query($SQL);
@@ -23,6 +21,7 @@
 	if ($result) {
 		if ($num_rows > 0) {
 			$user = mysql_fetch_array($result);
+			// login
 			$_SESSION['Login'] = "1";
 			$_SESSION['Nombre'] = $user['nombre'];
 			$_SESSION['Apellido'] = $user['apellido'];

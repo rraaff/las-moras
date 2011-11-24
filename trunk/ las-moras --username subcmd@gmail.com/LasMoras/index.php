@@ -145,6 +145,13 @@ $(document).ready(
 			dataType: "json",
 			success: postCargaCodigo
 			});
+		
+		$("#recordarPasswordForm").ajaxForm({
+			type: "POST",
+			url: "./doRecordarPassword.php",
+			dataType: "json",
+			success: postRecordarPassword
+			});
 	}
 );
 
@@ -193,6 +200,14 @@ function postCargaCodigo(data) {
 		} else {
 			alert('segui participando');
 		}
+	} else {
+		alert(data.error);
+	}
+}
+
+function postRecordarPassword(data) {
+	if (data.success == 'yes') {
+		alert('te mandamos el email');
 	} else {
 		alert(data.error);
 	}

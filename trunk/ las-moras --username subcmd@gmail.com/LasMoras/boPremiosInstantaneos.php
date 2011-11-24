@@ -141,8 +141,8 @@ function showWinner(ticketID) {
 	$.get("getTicketWinner.php?ticketID=" + ticketID, function(data){
 		// create a modal dialog with the data
 		$(data).modal({
-			overlayId: 'simplemodal-overlay',
-			containerId: 'simplemodal-container'
+			overlayId: 'winner-overlay',
+			containerId: 'winner-container'
 		});
 	});
 }

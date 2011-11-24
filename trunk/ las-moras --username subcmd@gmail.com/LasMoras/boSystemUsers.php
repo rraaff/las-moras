@@ -83,16 +83,6 @@
 <script type='text/javascript' src='js/jquery-ui-timepicker-addon.js'></script>
 <script>
 
-function showWinner(ticketID) {
-	$.get("getTicketWinner.php?ticketID=" + ticketID, function(data){
-		// create a modal dialog with the data
-		$(data).modal({
-			overlayId: 'simplemodal-overlay',
-			containerId: 'simplemodal-container'
-		});
-	});
-}
-
 $(document).ready(
 		function(){
 			$('#inicio').datetimepicker({
