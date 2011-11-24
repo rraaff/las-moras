@@ -16,6 +16,17 @@ body{
 	background-position: center top;
 	margin: 0px;
 	padding: 0px;
+	font-family: "Univers LT", Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: normal;
+	color: #FFFFFF;
+}
+a, a:active, a:visited {
+	color:#aa0410;
+}
+a:hover {
+	color:#aa0410;
+	text-decoration:underline;
 }
 #centralContent {
 	height: 600px;
@@ -73,37 +84,75 @@ body{
 /* Overlay */
 #login-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#login-container {height:0px; width:600px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
-     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
-#login-container .simplemodal-data {padding:8px;}
-#login-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
-#login-container a {color:#ddd;}
-#login-container a.modalCloseImg {background:url(../img/basic/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
-#login-container h3 {color:#84b8d9;}
+#login-container {
+	height:403px;
+	width:473px;
+	margin-left:50px;
+	filter:alpha(opacity=85); /* IE's opacity*/
+	opacity: 0.85;
+	border:1px dotted #00CC99;
+	background-image: url(../images/interfases/bgLogin.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#login-container .simplemodal-data {
+	padding:50px;
+	margin-top: 70px;
+}
+#login-container input {
+	background-color: transparent;
+	border: none;
+	width:280px;
+	color:#aa0410;
+}
+#login-container code { color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+/*#login-container a {color:#ddd;}*/
+#login-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:18px; right:35px; cursor:pointer;}
+#login-container h3 {color:#d90e1c;}
 
 /* Carga codigo */
 /* Overlay */
 #cargaCodigo-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#cargaCodigo-container {height:120px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
-     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
+#cargaCodigo-container {
+	height:462px;
+	width:307px;
+	filter:alpha(opacity=85); /* IE's opacity*/
+	opacity: 0.85;
+	border:0px;
+	background-image: url(../images/interfases/bgCargaCodigo.png);
+}
 #cargaCodigo-container .simplemodal-data {padding:8px;}
 #cargaCodigo-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #cargaCodigo-container a {color:#ddd;}
-#cargaCodigo-container a.modalCloseImg {background:url(../img/basic/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
-#cargaCodigo-container h3 {color:#84b8d9;}
+#cargaCodigo-container a.modalCloseImg {
+	background:url(../images/buttons/botonX.png) no-repeat;
+	width:36px;
+	height:37px;
+	display:inline;
+	z-index:3200;
+	position:absolute;
+	cursor:pointer;
+}
+#cargaCodigo-container h3 {color:#d90e1c;}
 
 /* Registro */
 /* Overlay */
 #registro-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#registro-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
-     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
+#registro-container {
+	height:462px;
+	width:307px;
+	filter:alpha(opacity=85); /* IE's opacity*/
+	opacity: 0.85;
+	border:0px;
+	background-image: url(../images/interfases/bgCargaCodigo.png);
+}
 #registro-container .simplemodal-data {padding:8px;}
 #registro-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #registro-container a {color:#ddd;}
-#registro-container a.modalCloseImg {background:url(../img/basic/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
-#registro-container h3 {color:#84b8d9;}
+#registro-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#registro-container h3 {color:#d90e1c;}
 
 /* Recordar password */
 /* Overlay */
@@ -114,17 +163,5 @@ body{
 #recordarPassword-container .simplemodal-data {padding:8px;}
 #recordarPassword-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #recordarPassword-container a {color:#ddd;}
-#recordarPassword-container a.modalCloseImg {background:url(../img/basic/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
-#recordarPassword-container h3 {color:#84b8d9;}
-
-/* Winner */
-/* Overlay */
-#winner-overlay {background-color:#000; cursor:wait;}
-/* Container */
-#winner-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
-     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
-#winner-container .simplemodal-data {padding:8px;}
-#winner-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
-#winner-container a {color:#ddd;}
-#winner-container a.modalCloseImg {background:url(../img/basic/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
-#winner-container h3 {color:#84b8d9;}
+#recordarPassword-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#recordarPassword-container h3 {color:#d90e1c;}
