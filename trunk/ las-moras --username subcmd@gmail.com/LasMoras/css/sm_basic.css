@@ -10,7 +10,11 @@
  *
  * Revision: $Id: basic.css 257 2010-07-27 23:06:56Z emartin24 $
  */
-
+body{
+	background-image: url(../images/fondoFE.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
 #basic-modal-registro {display:none;}
 #basic-modal-login {display:none;}
 #basic-modal-cargaCodigo {display:none;}

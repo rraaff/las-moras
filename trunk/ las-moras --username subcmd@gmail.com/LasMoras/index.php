@@ -23,7 +23,7 @@
 <?php } ?>
 </script>
 </head>
-<body background="img/wine_glass.jpg">
+<body>
 
 <!-- preload the images -->
 <div style='display:none'>
