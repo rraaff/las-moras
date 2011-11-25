@@ -9,10 +9,12 @@
 		mysql_select_db(DB_NAME,$connection);
 		
 		$descripcion = $_POST['descripcion'];
+		$mensaje = $_POST['mensaje'];
 		$inicio = $_POST['inicio'];
 		$fin = $_POST['fin'];
 		
 		$descripcion = quote_smart($descripcion, $connection);
+		$mensaje = quote_smart($mensaje, $connection);
 		$inicio = quote_smart($inicio, $connection);
 		$fin = quote_smart($fin, $connection);
 		
@@ -25,8 +27,8 @@
 		$content = addslashes($content);
 		fclose($fp);
 		
-		$insertTicket = "INSERT INTO INSTANT_WIN (descripcion, inicio, fin, name, type, size, content) 
-			VALUES ($descripcion, $inicio, $fin, $fileName, $fileType, $fileSize, '$content')";
+		$insertTicket = "INSERT INTO INSTANT_WIN (descripcion, mensaje, inicio, fin, name, type, size, content) 
+			VALUES ($descripcion, $mensaje, $inicio, $fin, $fileName, $fileType, $fileSize, '$content')";
 		$res = mysql_query($insertTicket,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
 		
 		mysql_close($connection);
@@ -55,9 +57,10 @@
 <?php include("include/menuBO.php"); ?> <br>
 
 	<form action="boPremiosInstantaneos.php" name="altaIWForm" id="altaIWForm" method="POST" enctype="multipart/form-data">
-		<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+		<input type="hidden" name="MAX_FILE_SIZE" value="10000000">
 		<table>
 			<tr><td>Descripcion</td><td><input type="text" name="descripcion"></td></tr>
+			<tr><td>Mensaje</td><td><input type="text" name="mensaje"></td></tr>
 			<tr><td>Imagen</td><td><input type="file" name="imagen" id="imagen"></td></tr>
 			<tr><td>Inicio</td><td><input type="text" name="inicio" id="inicio"></td></tr>
 			<tr><td>Fin</td><td><input type="text" name="fin" id="fin"></td></tr>

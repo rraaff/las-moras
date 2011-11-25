@@ -28,10 +28,10 @@
 			mysql_query($updateInstantWin,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
 			// si gano
 			if (mysql_affected_rows() == 1) {
-				$query = "SELECT id, descripcion FROM INSTANT_WIN WHERE ticketID = $returnInsert";
+				$query = "SELECT id, mensaje FROM INSTANT_WIN WHERE ticketID = $returnInsert";
 				$result_win = mysql_fetch_array(mysql_query($query));
 				$id_win = $result_win['id'];
-				$descripcion_win = $result_win['descripcion'];
+				$descripcion_win = $result_win['mensaje'];
 				$output = '{ "success": "yes", "error": "" , "win": "yes", "iw_id": "' . $id_win . '", "iw_desc": "' . $descripcion_win . '"}';
 			} else {
 				$output = '{ "success": "yes", "error": "" }';
