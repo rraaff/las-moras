@@ -1,12 +1,8 @@
 BackOffice
 
 // Web
-Falta campo edad en la base, mostrarlo en el bo
-Recordatorio de password por email, falta replacements
 Validaciones por todos lados
+Ventanas con fade, no mas alerts
 Compartir por facebook
 Compartir por tweeter
 Compartir por email
-
-Pablo
-falta script de popup

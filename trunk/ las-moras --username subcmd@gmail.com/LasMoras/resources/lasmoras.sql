@@ -45,6 +45,7 @@ CREATE  TABLE `INSTANT_WIN` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `ticketID` INT NULL ,
   `descripcion` VARCHAR(400) NOT NULL ,
+  `mensaje` MEDIUMTEXT NULL ,
   `inicio` DATETIME NOT NULL,
   `fin` DATETIME NOT NULL,
   `name` VARCHAR(100) NOT NULL,
