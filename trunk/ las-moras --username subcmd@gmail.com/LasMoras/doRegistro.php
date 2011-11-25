@@ -1,6 +1,6 @@
 <?php 
-	header("Content-type: text/html; charset=utf-8");
-	require("funcionesDB.php");
+	include("include/headers.php");
+	require("include/funcionesDB.php");
 	session_start();
 	
 	// Inicio conexion
@@ -10,6 +10,7 @@
 	$nombre = $_POST['nombre'];
 	$apellido = $_POST['apellido'];
 	$documento = $_POST['documento'];
+	$edad = $_POST['edad'];
 	$email = $_POST['email'];
 	$usuario = $_POST['usuario'];
 	$password = $_POST['password'];
@@ -17,6 +18,7 @@
 	$nombre = quote_smart($nombre, $connection);
 	$apellido = quote_smart($apellido, $connection);
 	$documento = quote_smart($documento, $connection);
+	$edad = quote_smart($edad, $connection);
 	$email = quote_smart($email, $connection);
 	$usuario = quote_smart($usuario, $connection);
 	$password = quote_smart($password, $connection);
@@ -35,10 +37,14 @@
 				if ($num_rows > 0) {
 					$output = '{ "success": "no", "error": "El email ya esta registrado." }';
 				} else {
-					$query = "INSERT INTO SYSTEMUSER (nombre, apellido, documento, email, usuario, password, fechaCreacion)
-					VALUES ($nombre, $apellido, $documento, $email, $usuario, $password, NOW() )";
+					$query = "INSERT INTO SYSTEMUSER (nombre, apellido, documento, edad, email, usuario, password, fechaCreacion)
+					VALUES ($nombre, $apellido, $documento, $edad, $email, $usuario, $password, NOW() )";
 					$res = mysql_query($query,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
 					$returnInsert = mysql_insert_id($connection);
+					// login
+					$query = "INSERT INTO LOGINS (systemUserID, fechaLogin)
+					VALUES ($returnInsert, NOW() )";
+					$res = mysql_query($query,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
 					// login
 					$_SESSION['Login'] = "1";
 					$_SESSION['Nombre'] = $nombre;

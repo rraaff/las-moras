@@ -1,6 +1,6 @@
 <?php
-
-require("funcionesDB.php");
+include("include/headers.php");
+require("include/funcionesDB.php");
 
 if(isset($_GET['id'])) {
 // if id is set then get the file with the id from database

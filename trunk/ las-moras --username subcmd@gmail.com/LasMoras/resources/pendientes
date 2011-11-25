@@ -1,13 +1,12 @@
 BackOffice
 
-Hacer pagina de listado de usuarios, logins, etc
-Guardar hora de login de usuarios (otra tabla)
-
 // Web
-Envio de emails
-Recordatorio de password por email (o blanqueo)
+Falta campo edad en la base, mostrarlo en el bo
+Recordatorio de password por email, falta replacements
 Validaciones por todos lados
-Uso de iw
 Compartir por facebook
 Compartir por tweeter
 Compartir por email
+
+Pablo
+falta script de popup

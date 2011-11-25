@@ -1,6 +1,6 @@
 <?php 
-	header("Content-type: text/html; charset=utf-8");
-	require("funcionesDB.php");
+	include("include/headers.php");
+	require("include/funcionesDB.php");
 	session_start();
 	
 	// Inicio conexion
@@ -26,6 +26,13 @@
 			$_SESSION['Nombre'] = $user['nombre'];
 			$_SESSION['Apellido'] = $user['apellido'];
 			$_SESSION['Id'] = $user['id'];
+			
+			// login
+			$systemUserID = $user['id'];
+			$query = "INSERT INTO LOGINS (systemUserID, fechaLogin)
+			VALUES ($systemUserID, NOW() )";
+			$res = mysql_query($query,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
+			
 			$output = '{ "success": "yes", "error": "" }';
 		} else {
 // 			no esta registrado

@@ -1,6 +1,6 @@
 <?php 
-	header("Content-type: text/html; charset=utf-8");
-	require("funcionesDB.php");
+	include("include/headers.php");
+	require("include/funcionesDB.php");
 	
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		// Inicio conexion
