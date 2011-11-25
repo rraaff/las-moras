@@ -77,7 +77,7 @@
 			<tr><td colspan="2" height="16"></td></tr>
 			<tr><td></td><td><input type="password" name="password"></td></tr>
 			<tr><td colspan="2" height="10"></td></tr>
-			<tr><td></td><td height="120" align="right"><a href="javascript:loginForm.submit();"><img src="images/buttons/enviarDatos.png" width="158" height="47" border="0"></a></td></tr>
+			<tr><td></td><td height="120" align="right"><input type="image" src="images/buttons/enviarDatos.png" width="158" height="47"></td></tr>
 			<tr><td colspan="2"><table cellpadding="0" cellspacing="0"><tr><td>SI NO EST&Aacute;S REGISTRADO, <br><a href="javascript:register()">HAC&Eacute; CLIC AC&Aacute;.</a></td><td width="30"></td><td>¿OLVIDASTE TU PASSWORD?,<br><a href="javascript:recordarPassword()">HAC&Eacute; CLIC AC&Aacute;.</a></td></tr></table></td></tr>
 		</table>
 	</form>
