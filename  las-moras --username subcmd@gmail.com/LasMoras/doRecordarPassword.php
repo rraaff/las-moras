@@ -37,6 +37,10 @@
 			$mail->Subject    = PASSWORD_REMINDER_SUBJECT;
 			$mail->AltBody    = PASSWORD_REMINDER_BODY_ALT;
 			$body             = $mail->getFile('password_reminder.html');
+			$body = str_replace('{NOMBRE}', $nombre, $body);
+			$body = str_replace('{APELLIDO}', $apellido, $body);
+			$body = str_replace('{USUARIO}', $usuario, $body);
+			$body = str_replace('{PASSWORD}', $password, $body);
 			$mail->MsgHTML("$body");
 			$mail->AddAddress("$emailto", "$nombre $apellido");
 			if(!$mail->Send()) {
