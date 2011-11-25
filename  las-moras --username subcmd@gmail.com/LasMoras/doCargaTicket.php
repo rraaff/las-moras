@@ -1,7 +1,7 @@
 <?php 
-	header("Content-type: text/html; charset=utf-8");
-	require("funcionesDB.php");
-	require("checkLogin.php");
+	include("include/headers.php");
+	require("include/funcionesDB.php");
+	require("include/checkLogin.php");
 	
 	// Inicio conexion
 	$connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la conexion");

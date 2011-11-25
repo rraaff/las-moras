@@ -2,7 +2,7 @@
 // TODO Login de usuarios polenta
 
 	header("Content-type: text/html; charset=utf-8");
-	require("funcionesDB.php");
+	require("include/funcionesDB.php");
 	
 	// Inicio conexion
 	$connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la conexion");

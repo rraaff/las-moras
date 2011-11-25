@@ -1,5 +1,5 @@
 <?php 
-	header("Content-type: text/html; charset=utf-8");
+	include("include/headers.php");
 	session_start();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -8,9 +8,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <title>Finca Las Moras - Premia tu forma de disfrutar la vida</title>
-<meta name="keywords" content="Vino, Tinto, Blanco, Finca Las Moras, Beber con moderación" />
+<meta name="keywords" content="Vino, Tinto, Blanco, Finca Las Moras, Beber con moderaciï¿½n" />
 <meta name="description" content="Finca Las Moras premia tu forma de disfrutar la vida" />
-<meta name="AUTHOR" content="That Day in London - Agencia Interactiva & Diseño - para Publiquest" />
+<meta name="AUTHOR" content="That Day in London - Agencia Interactiva & Diseï¿½o - para Publiquest" />
 <link rel="icon" href="./favicon.ico" type="icon"/>
 <!-- Contact Form CSS files -->
 <link type='text/css' href='css/sm_basic.css' rel='stylesheet' media='screen' />
@@ -63,7 +63,7 @@
 			<tr><td><input type="text" name="email"></td></tr>
 			<tr><td><input type="text" name="edad"></td></tr>
 			<tr><td><input type="text" name="usuario"></td></tr>
-			<tr><td><input type="text" name="password"></td></tr>
+			<tr><td><input type="password" name="password"></td></tr>
 			<tr><td colspan="2"><input type="submit"></td></tr>
 		</table>
 	</form>
@@ -75,10 +75,10 @@
 		<table width="380" border="0" bordercolor="#00FF00" cellpadding="0" cellspacing="0">
 			<tr><td width="85" height="30"></td><td width="295"><input type="text" name="usuario"></td></tr>
 			<tr><td colspan="2" height="16"></td></tr>
-			<tr><td></td><td><input type="text" name="password"></td></tr>
+			<tr><td></td><td><input type="password" name="password"></td></tr>
 			<tr><td colspan="2" height="10"></td></tr>
 			<tr><td></td><td height="120" align="right"><a href="javascript:loginForm.submit();"><img src="images/buttons/enviarDatos.png" width="158" height="47" border="0"></a></td></tr>
-			<tr><td colspan="2"><table cellpadding="0" cellspacing="0"><tr><td>SI NO EST&Aacute;S REGISTRADO, <br><a href="javascript:register()">HAC&Eacute; CLIC AC&Aacute;.</a></td><td width="30"></td><td>¿OLVIDASTE TU PASSWORD?,<br><a href="javascript:recordarPassword()">HAC&Eacute; CLIC AC&Aacute;.</a></td></tr></table></td></tr>
+			<tr><td colspan="2"><table cellpadding="0" cellspacing="0"><tr><td>SI NO EST&Aacute;S REGISTRADO, <br><a href="javascript:register()">HAC&Eacute; CLIC AC&Aacute;.</a></td><td width="30"></td><td>Â¿OLVIDASTE TU PASSWORD?,<br><a href="javascript:recordarPassword()">HAC&Eacute; CLIC AC&Aacute;.</a></td></tr></table></td></tr>
 		</table>
 	</form>
 </div>
@@ -107,7 +107,7 @@
 <script src='js/jquery-1.7.min.js'></script>
 <script src='js/jquery.form.js'></script>
 <script src='js/jquery.simplemodal-1.3.5.js'></script>
-<script lang="javascript">
+<script language="javascript">
 
 
 jQuery(function ($) {
@@ -179,6 +179,7 @@ $(document).ready(
 
 function postRegisto(data) {
 	if (data.success == 'yes') {
+		logged = true;
 		$.modal.close();
 	} else {
 		alert(data.error);
@@ -193,6 +194,14 @@ function postLogin(data) {
 			overlayId: 'cargaCodigo-overlay',
 			containerId: 'cargaCodigo-container'
 		});
+	} else {
+		alert(data.error);
+	}
+}
+
+function postRecordarPassword(data) {
+	if (data.success == 'yes') {
+		$.modal.close();
 	} else {
 		alert(data.error);
 	}

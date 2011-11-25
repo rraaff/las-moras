@@ -1,7 +1,7 @@
 <?php
-
-require("funcionesDB.php");
-require("boCheckLogin.php");
+include("include/headers.php");
+require("include/funcionesDB.php");
+require("include/boCheckLogin.php");
 
 if(isset($_GET['id'])) {
 // if id is set then get the file with the id from database

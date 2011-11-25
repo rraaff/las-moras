@@ -1,8 +1,8 @@
 <?php 
-	header("Content-type: text/html; charset=utf-8");
-	require("funcionesDB.php");
+	include("include/headers.php");
+	require("include/funcionesDB.php");
 	include_once('phpmail/class.phpmailer.php');
-	include("constantes_mail.php");
+	include("include/constantes_mail.php");
 	
 	// Inicio conexion
 	$connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la conexion");
@@ -36,13 +36,12 @@
 			$mail -> AddCustomHeader($headers);
 			$mail->Subject    = PASSWORD_REMINDER_SUBJECT;
 			$mail->AltBody    = PASSWORD_REMINDER_BODY_ALT;
-			//$body             = $mail->getFile('password_reminder.html');
+			$body             = $mail->getFile('password_reminder.html');
 			$mail->MsgHTML("$body");
 			$mail->AddAddress("$emailto", "$nombre $apellido");
 			if(!$mail->Send()) {
 				$err_mail = $mail->ErrorInfo;
-				//$output = '{ "success": "no", "error": "$err_mail" }';
-				$output = $err_mail;
+				$output = '{ "success": "no", "error": "Error enviando el email." }';
 			} else {
 				$output = '{ "success": "yes", "error": "" }';
 			}

@@ -1,20 +1,18 @@
 <?php 
-	header("Content-type: text/html; charset=utf-8");
-	require("funcionesDB.php");
-	require("boCheckLogin.php");
+	include("include/headers.php");
+	require("include/funcionesDB.php");
+	require("include/boCheckLogin.php");
 ?>
 
 <html>
 <head>
 <title>Home</title>
+<?php include("include/headerBO.php"); ?>
 </head>
 <body>
 Hola <?php echo($_SESSION['boNombre']);?> <?php echo($_SESSION['boApellido']);?><br>
 
-<A HREF = "boPremiosInstantaneos.php">Premios</A><br>
+<?php include("include/menuBO.php"); ?>
 
-<A HREF = "boSystemUsers.php">Usuarios</A><br>
-
-<A HREF = "boLogout.php">Log out</A><br>
 </body>
 </html>

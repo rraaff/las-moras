@@ -1,7 +1,7 @@
 <?php 
-	header("Content-type: text/html; charset=utf-8");
-	require("funcionesDB.php");
-	require("boCheckLogin.php");
+	include("include/headers.php");
+	require("include/funcionesDB.php");
+	require("include/boCheckLogin.php");
 	
 	if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_FILES['imagen']['size'] > 0){
 		// Inicio conexion
@@ -47,17 +47,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Las Moras</title>
 
-<link type='text/css' href='css/jquery-ui-1.8.16.custom.css' rel='stylesheet' media='screen' />
+<?php include("include/headerBO.php"); ?>
 
-<!-- Contact Form CSS files -->
-<link type='text/css' href='css/sm_basic.css' rel='stylesheet' media='screen' />
-<!-- IE6 "fix" for the close png image -->
-<!--[if lt IE 7]>
-<link type='text/css' href='css/sm_basic_ie.css' rel='stylesheet' media='screen' />
-<![endif]-->
-<!-- JS files are loaded at the bottom of the page -->
 </head>
 <body>
+
+<?php include("include/menuBO.php"); ?> <br>
 
 	<form action="boPremiosInstantaneos.php" name="altaIWForm" id="altaIWForm" method="POST" enctype="multipart/form-data">
 		<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
@@ -129,12 +124,6 @@
 	} 
 ?>
 </table>
-<!-- Load jQuery, SimpleModal and Basic JS files -->
-<script type='text/javascript' src='js/jquery-1.7.min.js'></script>
-<script type='text/javascript' src='js/jquery.form.js'></script>
-<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
-<script type='text/javascript' src='js/jquery-ui-1.8.16.custom.min.js'></script>
-<script type='text/javascript' src='js/jquery-ui-timepicker-addon.js'></script>
 <script>
 
 function showWinner(ticketID) {
