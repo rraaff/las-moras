@@ -68,14 +68,14 @@ em.error { color: black; }
 <!-- modal registro display:block; -->
 <div id="basic-modal-registro">
 	<form action="doRegistro.php" name="registroForm" id="registroForm" method="POST">
-		<table border="1" cellpadding="0" cellspacing="0">
-			<tr><td><input type="text" name="nombre"></td></tr>
-			<tr><td><input type="text" name="apellido"></td></tr>
-			<tr><td><input type="text" name="documento"></td></tr>
-			<tr><td><input type="text" name="email"></td></tr>
-			<tr><td><input type="text" name="edad"></td></tr>
-			<tr><td><input type="text" name="usuario"></td></tr>
-			<tr><td><input type="password" name="password"></td></tr>
+		<table border="1" cellpadding="0" cellspacing="0" id="registroTable">
+			<tr><td><input type="text" name="nombre"></td><td></td></tr>
+			<tr><td><input type="text" name="apellido"></td><td></td></tr>
+			<tr><td><input type="text" name="documento"></td><td></td></tr>
+			<tr><td><input type="text" name="email"></td><td></td></tr>
+			<tr><td><input type="text" name="edad"></td><td></td></tr>
+			<tr><td><input type="text" name="usuario"></td><td width="25" id="usuario_err">AA</td></tr>
+			<tr><td><input type="password" name="password"></td><td></td></tr>
 			<tr><td colspan="2"><input type="submit"></td></tr>
 		</table>
 	</form>
@@ -203,6 +203,9 @@ $(document).ready(
 		$("#loginForm").mouseover(function(){
 		      generateTooltips();
 		    });
+		$("#registroForm").mouseover(function(){
+		      generateTooltips();
+		    });
 		$("#ticketForm").mouseover(function(){
 		      generateTooltips();
 		    });
@@ -250,7 +253,6 @@ $(document).ready(
 			dataType: "json",
 			success: postCargaCodigo
 			});*/
-
 	}
 
 );
@@ -261,7 +263,9 @@ function postRegisto(data) {
 		logged = true;
 		$.modal.close();
 	} else {
-		alert(data.error);
+		if (data.usuario != '') {
+			document.getElementById('usuario_err').innerHTML = "<img id='usuarioerror' src='images/unchecked.gif' hovertext='" + data.usuario + "' />";
+		} 
 	}
 }
 

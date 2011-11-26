@@ -28,14 +28,14 @@
 	$num_rows = mysql_num_rows($result);
 	if ($result) {
 		if ($num_rows > 0) {
-			$output = '{ "success": "no", "error": "El nombre de usuario ya esta registrado." }';
+			$output = '{ "success": "no", "usuario": "El nombre de usuario ya esta registrado." }';
 		} else {
 			$SQL = "SELECT * FROM SYSTEMUSER WHERE email = $email";
 			$result = mysql_query($SQL);
 			$num_rows = mysql_num_rows($result);
 			if ($result) {
 				if ($num_rows > 0) {
-					$output = '{ "success": "no", "error": "El email ya esta registrado." }';
+					$output = '{ "success": "no", "email": "El email ya esta registrado." }';
 				} else {
 					$query = "INSERT INTO SYSTEMUSER (nombre, apellido, documento, edad, email, usuario, password, fechaCreacion)
 					VALUES ($nombre, $apellido, $documento, $edad, $email, $usuario, $password, NOW() )";
