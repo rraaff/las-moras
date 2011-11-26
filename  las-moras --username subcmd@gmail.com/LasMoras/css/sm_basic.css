@@ -165,3 +165,14 @@ a:hover {
 #recordarPassword-container a {color:#ddd;}
 #recordarPassword-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
 #recordarPassword-container h3 {color:#d90e1c;}
+
+#tooltip {
+	position: absolute;
+	z-index: 3000;
+	border: 1px solid #111;
+	background-color: #eee;
+	padding: 5px;
+	opacity: 0.85;
+	color: red;
+}
+#tooltip h3, #tooltip div { margin: 0; }

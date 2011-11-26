@@ -31,6 +31,18 @@
 	var logged = false;
 <?php } ?>
 </script>
+<style>
+em.error {
+  background:url("images/unchecked.gif") no-repeat 0px 0px;
+  padding-left: 16px;
+}
+em.success {
+  background:url("images/checked.gif") no-repeat 0px 0px;
+  padding-left: 16px;
+}
+em.error { color: black; }
+#warning { display: none; }
+</style>
 </head>
 <body>
 <div id="centralContent">
@@ -73,7 +85,7 @@
 <div id="basic-modal-login">
 	<form action="doLogin.php" name="loginForm" id="loginForm" method="POST">
 		<table width="380" border="0" bordercolor="#00FF00" cellpadding="0" cellspacing="0">
-			<tr><td width="85" height="30"></td><td width="295"><input type="text" name="usuario"></td></tr>
+			<tr><td width="85" height="30"></td><td width="295"><input type="text" name="usuario"></td><td></td></tr>
 			<tr><td colspan="2" height="16"></td></tr>
 			<tr><td></td><td><input type="password" name="password"></td></tr>
 			<tr><td colspan="2" height="10"></td></tr>
@@ -87,8 +99,8 @@
 <div id="basic-modal-cargaCodigo">
 	<form action="doCargaTicket.php" name="ticketForm" id="ticketForm" method="POST">
 		<table>
-			<tr><td><input type="text" name="codigo"></td></tr>
-			<tr><td><input type="submit" style="background-image:url(images/buttons/cargarCodigo.png); width:156px; height:43px;"></td></tr>
+			<tr><td><input type="text" name="codigo"></td><td></td></tr>
+			<tr><td colspan="2"><input type="submit" style="background-image:url(images/buttons/cargarCodigo.png); width:156px; height:43px;"></td></tr>
 		</table>
 	</form>
 </div>
@@ -103,14 +115,19 @@
 	</form>
 </div>
 
+<div id="tooltip" style="display: none; "><h3></h3><div></div><div class="url"></div></div>
+
 <!-- Load jQuery, SimpleModal and Basic JS files -->
 <script src='js/jquery-1.7.min.js'></script>
 <script src='js/jquery.form.js'></script>
 <script src='js/jquery.simplemodal-1.3.5.js'></script>
+<script src="js/jquery.tooltip.js" type="text/javascript"></script>
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
 <script language="javascript">
 
 
 jQuery(function ($) {
+
 	$('#registro').click(function (e) {
 		$('#basic-modal-registro').modal(
 			{
@@ -124,7 +141,8 @@ jQuery(function ($) {
 		if (logged) {
 			$('#basic-modal-cargaCodigo').modal({
 				overlayId: 'cargaCodigo-overlay',
-				containerId: 'cargaCodigo-container'
+				containerId: 'cargaCodigo-container',
+				persist: true
 			});
 		} else {
 			$('#basic-modal-login').modal({
@@ -153,6 +171,53 @@ $(document).ready(
 			dataType: "json",
 			success: postRegisto
 			});
+		
+		$("#recordarPasswordForm").ajaxForm({
+			type: "POST",
+			url: "./doRecordarPassword.php",
+			dataType: "json",
+			success: postRecordarPassword
+			});
+
+		//function to generate tooltips
+		function generateTooltips() {
+		  //make sure tool tip is enabled for any new error label
+			$("img[id*='error']").tooltip({
+				showURL: false,
+				opacity: 0.99,
+				fade: 150,
+				positionRight: true,
+					bodyHandler: function() {
+						return $("#"+this.id).attr("hovertext");
+					}
+			});
+			//make sure tool tip is enabled for any new valid label
+			$("img[src*='tick.gif']").tooltip({
+				showURL: false,
+					bodyHandler: function() {
+						return "OK";
+					}
+			});
+		}
+
+		$("#loginForm").mouseover(function(){
+		      generateTooltips();
+		    });
+		$("#ticketForm").mouseover(function(){
+		      generateTooltips();
+		    });
+	
+		$("#loginForm").validate({
+			errorPlacement: function(error, element) {
+				error.appendTo( element.parent("td").next("td") );
+			},
+			rules: { usuario: {required: true},
+					password: {required: true}
+			},
+			messages: { usuario: {required: "<img id='usuarioerror' src='images/unchecked.gif' hovertext='Ingrese el usuario.' />"},
+						password: {required: "<img id='passworderror' src='images/unchecked.gif' hovertext='Ingrese el password.' />"},
+			}
+		});
 
 		$("#loginForm").ajaxForm({
 			type: "POST",
@@ -161,21 +226,35 @@ $(document).ready(
 			success: postLogin
 			});
 
-		$("#ticketForm").ajaxForm({
+		$("#ticketForm").validate({
+			errorPlacement: function(error, element) {
+				error.appendTo( element.parent("td").next("td") );
+			},
+			rules: { codigo: {required: true}
+			},
+			messages: { codigo: {required: "<img id='codigoerror' src='images/unchecked.gif' hovertext='Ingrese el codigo.' />"}
+			},
+			submitHandler: function() {
+	            $('#ticketForm').ajaxSubmit({
+	    			type: "POST",
+	    			url: "./doCargaTicket.php",
+	    			dataType: "json",
+	    			success: postCargaCodigo
+	    			});
+	        }
+		});
+		
+		/*$("#ticketForm").ajaxForm({
 			type: "POST",
 			url: "./doCargaTicket.php",
 			dataType: "json",
 			success: postCargaCodigo
-			});
-		
-		$("#recordarPasswordForm").ajaxForm({
-			type: "POST",
-			url: "./doRecordarPassword.php",
-			dataType: "json",
-			success: postRecordarPassword
-			});
+			});*/
+
 	}
+
 );
+
 
 function postRegisto(data) {
 	if (data.success == 'yes') {
@@ -192,7 +271,8 @@ function postLogin(data) {
 		$.modal.close();
 		$('#basic-modal-cargaCodigo').modal({
 			overlayId: 'cargaCodigo-overlay',
-			containerId: 'cargaCodigo-container'
+			containerId: 'cargaCodigo-container',
+			persist: true
 		});
 	} else {
 		alert(data.error);
