@@ -79,11 +79,10 @@ a:hover {
 #basic-modal-login {display:none;}
 #basic-modal-cargaCodigo {display:none;}
 #basic-modal-recordarPassword {display:none;}
-
 #basic-modal-gracias {display:none;}
 #basic-modal-win {display:none;}
 #basic-modal-claveEnviada {display:none;}
-
+#basic-modal-graciasPorRegistrarte {display:none;}
 
 /* Login */
 /* Overlay */
@@ -195,7 +194,6 @@ a:hover {
 #codigoWin-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
 #codigoWin-container h3 {color:#d90e1c;}
 
-
 /* clave enviada */
 /* Overlay */
 #claveEnviada-overlay {background-color:#000; cursor:wait;}
@@ -207,6 +205,18 @@ a:hover {
 #claveEnviada-container a {color:#ddd;}
 #claveEnviada-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
 #claveEnviada-container h3 {color:#d90e1c;}
+
+/* Registro gracias */
+/* Overlay */
+#registroGracias-overlay {background-color:#000; cursor:wait;}
+/* Container */
+#registroGracias-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
+     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
+#registroGracias-container .simplemodal-data {padding:8px;}
+#registroGracias-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#registroGracias-container a {color:#ddd;}
+#registroGracias-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#registroGracias-container h3 {color:#d90e1c;}
 
 #tooltip {
 	position: absolute;

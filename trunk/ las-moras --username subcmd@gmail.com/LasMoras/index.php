@@ -72,22 +72,22 @@ em.error { color: black; }
 			<tr><td><input type="text" name="nombre"></td><td></td></tr>
 			<tr><td><input type="text" name="apellido"></td><td></td></tr>
 			<tr><td><input type="text" name="documento"></td><td></td></tr>
-			<tr><td><input type="text" name="email"></td><td></td></tr>
+			<tr><td><input type="text" name="email"></td><td width="25" id="emailerr"></td></tr>
 			<tr><td><input type="text" name="edad"></td><td></td></tr>
-			<tr><td><input type="text" name="usuario"></td><td width="25" id="usuario_err"></td></tr>
+			<tr><td><input type="text" name="usuario"></td><td width="25" id="usuarioerr"></td></tr>
 			<tr><td><input type="password" name="password"></td><td></td></tr>
 			<tr><td colspan="2"><input type="submit"></td></tr>
 		</table>
 	</form>
 </div>
 	
-<!-- modal carga codigo -->
+<!-- modal login -->
 <div id="basic-modal-login">
 	<form action="doLogin.php" name="loginForm" id="loginForm" method="POST">
 		<table width="380" border="0" bordercolor="#00FF00" cellpadding="0" cellspacing="0">
-			<tr><td width="85" height="30"></td><td width="295"><input type="text" name="usuario"></td><td></td></tr>
+			<tr><td width="85" height="30"></td><td width="295"><input type="text" name="usuario"></td><td id="loginusuarioerr"></td></tr>
 			<tr><td colspan="2" height="16"></td></tr>
-			<tr><td></td><td><input type="password" name="password"></td></tr>
+			<tr><td></td><td><input type="password" name="password"></td><td></td></tr>
 			<tr><td colspan="2" height="10"></td></tr>
 			<tr><td></td><td height="120" align="right"><input type="image" src="images/buttons/enviarDatos.png" width="158" height="47"></td></tr>
 			<tr><td colspan="2"><table cellpadding="0" cellspacing="0"><tr><td>SI NO EST&Aacute;S REGISTRADO, <br><a href="javascript:register()">HAC&Eacute; CLIC AC&Aacute;.</a></td><td width="30"></td><td>¿OLVIDASTE TU PASSWORD?,<br><a href="javascript:recordarPassword()">HAC&Eacute; CLIC AC&Aacute;.</a></td></tr></table></td></tr>
@@ -113,6 +113,14 @@ em.error { color: black; }
 			<tr><td colspan="2"><input type="submit"></td></tr>
 		</table>
 	</form>
+</div>
+
+<!-- modal gracias por registrarte -->
+<div id="basic-modal-graciasPorRegistrarte">
+	<table>
+		<tr><td>Gracias por registrarte, ya podes cargar codigos.</td></tr>
+		<tr><td colspan="2"><input type="button" onclick="closeCurrentModal()"></td></tr>
+	</table>
 </div>
 
 <!-- modal gracias por cargar -->
@@ -227,20 +235,13 @@ jQuery(function ($) {
 $(document).ready(
 	function(){
 		
-		$("#registroForm").ajaxForm({
+		/*$("#registroForm").ajaxForm({
 			type: "POST",
 			url: "./doRegistro.php",
 			dataType: "json",
 			success: postRegisto
-			});
-		
-		/*$("#recordarPasswordForm").ajaxForm({
-			type: "POST",
-			url: "./doRecordarPassword.php",
-			dataType: "json",
-			success: postRecordarPassword
 			});*/
-
+		
 		//function to generate tooltips
 		function generateTooltips() {
 		  //make sure tool tip is enabled for any new error label
@@ -274,7 +275,42 @@ $(document).ready(
 		$("#recordarPasswordForm").mouseover(function(){
 		      generateTooltips();
 		    });
-	
+
+		$("#registroForm").validate({
+			errorPlacement: function(error, element) {
+				error.appendTo( element.parent("td").next("td") );
+			},
+			rules: { nombre: {required: true},
+					apellido: {required: true},
+					documento: {required: true, maxlength: 9},
+					email: {required: true, email: true},
+					edad: {required: true, min: 18},
+					usuario: {required: true},
+					password: {required: true}
+			},
+			messages: {
+				nombre: {required: "<img id='usuarioerror' src='images/unchecked.gif' hovertext='Ingrese el nombre.' />"}, 
+				apellido: {required: "<img id='apellidoerror' src='images/unchecked.gif' hovertext='Ingrese el apellido.' />"},
+				documento: {required: "<img id='docerror' src='images/unchecked.gif' hovertext='Ingrese el documento.' />",
+						maxlength: "<img id='docerror' src='images/unchecked.gif' hovertext='El documento debe tener hasta 9 numeros.' />"},
+				email: {required: "<img id='emailerror' src='images/unchecked.gif' hovertext='Ingrese el email.' />",
+						email: "<img id='emailerror' src='images/unchecked.gif' hovertext='Ingrese un email valido.' />"},
+				edad: {required: "<img id='edaderror' src='images/unchecked.gif' hovertext='Ingrese la edad.' />",
+						min: "<img id='edaderror' src='images/unchecked.gif' hovertext='Para participar de la promo debe se mayor de edad.' />"},
+				usuario: {required: "<img id='usuarioerror' src='images/unchecked.gif' hovertext='Ingrese el usuario.' />"},
+				password: {required: "<img id='passworderror' src='images/unchecked.gif' hovertext='Ingrese el password.' />"},
+			},
+			submitHandler: function() {
+				//setError('loginusuario', '');
+	            $('#registroForm').ajaxSubmit({
+	    			type: "POST",
+	    			url: "./doRegistro.php",
+	    			dataType: "json",
+	    			success: postRegisto
+	    			});
+	        }
+		});
+		
 		$("#loginForm").validate({
 			errorPlacement: function(error, element) {
 				error.appendTo( element.parent("td").next("td") );
@@ -284,7 +320,16 @@ $(document).ready(
 			},
 			messages: { usuario: {required: "<img id='usuarioerror' src='images/unchecked.gif' hovertext='Ingrese el usuario.' />"},
 						password: {required: "<img id='passworderror' src='images/unchecked.gif' hovertext='Ingrese el password.' />"},
-			}
+			},
+			submitHandler: function() {
+				setError('loginusuario', '');
+	            $('#loginForm').ajaxSubmit({
+	    			type: "POST",
+	    			url: "./doLogin.php",
+	    			dataType: "json",
+	    			success: postLogin
+	    		});
+	        }
 		});
 
 		$("#recordarPasswordForm").validate({
@@ -307,13 +352,6 @@ $(document).ready(
 	    			});
 	        }
 		});
-
-		$("#loginForm").ajaxForm({
-			type: "POST",
-			url: "./doLogin.php",
-			dataType: "json",
-			success: postLogin
-			});
 
 		$("#ticketForm").validate({
 			errorPlacement: function(error, element) {
@@ -374,11 +412,12 @@ function postLogin(data) {
 		$.modal.close();
 		showCargaCodigoLigthBox();
 	} else {
-		alert(data.error);
+		setError('loginusuario', data.error);
 	}
 }
 
 function postRecordarPassword(data) {
+	setError('recPassEmail', '');
 	if (data.success == 'yes') {
 		$.modal.close();
 		showClaveEnviadaLigthBox();
