@@ -180,8 +180,7 @@ function showRegistroLigthBox() {
 	$('#basic-modal-registro').modal({
 		overlayId: 'registro-overlay',
 		containerId: 'registro-container',
-		persist: true,
-		onClose: function (dialog) {closeAnimateCurrentDialog(dialog);}
+		persist: true
 	});
 }
 
@@ -214,6 +213,14 @@ function showClaveEnviadaLigthBox() {
 	$('#basic-modal-claveEnviada').modal({
 		overlayId: 'claveEnviada-overlay',
 		containerId: 'claveEnviada-container',
+		onClose: function (dialog) {closeAnimateCurrentDialog(dialog);}
+	});
+}
+
+function showRegistradoLigthBox() {
+	$('#basic-modal-graciasPorRegistrarte').modal({
+		overlayId: 'registroGracias-overlay',
+		containerId: 'registroGracias-container',
 		onClose: function (dialog) {closeAnimateCurrentDialog(dialog);}
 	});
 }
@@ -396,13 +403,15 @@ function closeCurrentModal() {
 }
 
 function postRegisto(data) {
+	setError('usuario', '');
+	setError('email', '');
 	if (data.success == 'yes') {
 		logged = true;
 		$.modal.close();
+		showRegistradoLigthBox();
 	} else {
-		if (data.usuario != '') {
-			document.getElementById('usuarioerr').innerHTML = "<img id='usuarioerror' src='images/unchecked.gif' hovertext='" + data.usuario + "' />";
-		} 
+		setError('usuario', data.usuario);
+		setError('email', data.email);
 	}
 }
 
