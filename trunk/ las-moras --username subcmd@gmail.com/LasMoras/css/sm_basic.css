@@ -80,6 +80,11 @@ a:hover {
 #basic-modal-cargaCodigo {display:none;}
 #basic-modal-recordarPassword {display:none;}
 
+#basic-modal-gracias {display:none;}
+#basic-modal-win {display:none;}
+#basic-modal-claveEnviada {display:none;}
+
+
 /* Login */
 /* Overlay */
 #login-overlay {background-color:#000; cursor:wait;}
@@ -165,6 +170,43 @@ a:hover {
 #recordarPassword-container a {color:#ddd;}
 #recordarPassword-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
 #recordarPassword-container h3 {color:#d90e1c;}
+
+/* codigo agradecimiento */
+/* Overlay */
+#codigoGracias-overlay {background-color:#000; cursor:wait;}
+/* Container */
+#codigoGracias-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
+     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
+#codigoGracias-container .simplemodal-data {padding:8px;}
+#codigoGracias-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#codigoGracias-container a {color:#ddd;}
+#codigoGracias-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#codigoGracias-container h3 {color:#d90e1c;}
+
+/* codigo iw */
+/* Overlay */
+#codigoWin-overlay {background-color:#000; cursor:wait;}
+/* Container */
+#codigoWin-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
+     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
+#codigoWin-container .simplemodal-data {padding:8px;}
+#codigoWin-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#codigoWin-container a {color:#ddd;}
+#codigoWin-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#codigoWin-container h3 {color:#d90e1c;}
+
+
+/* clave enviada */
+/* Overlay */
+#claveEnviada-overlay {background-color:#000; cursor:wait;}
+/* Container */
+#claveEnviada-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
+     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
+#claveEnviada-container .simplemodal-data {padding:8px;}
+#claveEnviada-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#claveEnviada-container a {color:#ddd;}
+#claveEnviada-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#claveEnviada-container h3 {color:#d90e1c;}
 
 #tooltip {
 	position: absolute;

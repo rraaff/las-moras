@@ -38,7 +38,7 @@
 			}
 		} else {
 			// Si ya fue cargado, doy mensaje de error
-			$output = '{ "success": "no", "error": "Ticket ya cargado." }';
+			$output = '{ "success": "no", "codigo": "Ticket ya cargado." }';
 		}
 	} else {
 		$output = '{ "success": "no", "error": "Error generico." }';
