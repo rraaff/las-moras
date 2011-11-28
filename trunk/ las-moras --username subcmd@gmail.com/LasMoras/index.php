@@ -45,11 +45,24 @@ em.error { color: black; }
 </style>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div id="centralContent">
 	<div id="promoButtons"><a href='#' class='cargaCodigo' id="cargaCodigo"><img src="images/buttons/cargaElCodigo.gif" width="336" height="45" border="0"></a><a href="premios.html"><img src="images/buttons/miraLosPremios.gif" width="336" height="45" border="0"></a></div>
 	<div id="footer">
 		<div id="legal"><a href="javascript:openLegal();">Bases y condiciones del sitio</a></div>
-		<div id="socialHub"><a href="#"><img src="images/buttons/fb.gif" width="38" height="30" border="0"></a><a href="#"><img src="images/buttons/tw.gif" width="36" height="30" border="0"></a><a href="#"><img src="images/buttons/email.gif" width="39" height="30" border="0"></a></div>
+		<div id="socialHub">
+			<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-lang="es">Twittear</a><br>
+			<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+			<a href="javascript:showCompartirEmailLigthBox()"><img src="images/buttons/email.gif" width="39" height="30" border="0"></a></div>
 	</div>
 </div>
 <!-- preload the images -->
@@ -113,6 +126,24 @@ em.error { color: black; }
 			<tr><td colspan="2"><input type="submit"></td></tr>
 		</table>
 	</form>
+</div>
+
+<!-- modal share email-->
+<div id="basic-modal-compartirEmail">
+	<form action="doCompartirEmail.php" name="compartirEmailForm" id="compartirEmailForm" method="POST">
+		<table>
+			<tr><td>Email</td><td><input type="text" name="email" id="emailcompartir"></td><td width="25" id="emailcompartirerr"></td></tr>
+			<tr><td colspan="2"><input type="submit"></td></tr>
+		</table>
+	</form>
+</div>
+
+<!-- modal gracias por compartir -->
+<div id="basic-modal-compartirEmailGracias">
+	<table>
+		<tr><td>Gracias por compartir.</td></tr>
+		<tr><td colspan="2"><input type="button" onclick="closeCurrentModal()"></td></tr>
+	</table>
 </div>
 
 <!-- modal gracias por registrarte -->
@@ -225,6 +256,20 @@ function showRegistradoLigthBox() {
 	});
 }
 
+function showCompartirEmailLigthBox() {
+	$('#basic-modal-compartirEmail').modal({
+		overlayId: 'compartirEmail-overlay',
+		containerId: 'compartirEmail-container'
+	});
+}
+
+function showCompartirEmailGraciasLigthBox() {
+	$('#basic-modal-compartirEmailGracias').modal({
+		overlayId: 'compartirEmailGracias-overlay',
+		containerId: 'compartirEmailGracias-container'
+	});
+}
+
 jQuery(function ($) {
 	
 	$('#cargaCodigo').click(function (e) {
@@ -280,6 +325,9 @@ $(document).ready(
 		      generateTooltips();
 		    });
 		$("#recordarPasswordForm").mouseover(function(){
+		      generateTooltips();
+		    });
+		$("#compartirEmailForm").mouseover(function(){
 		      generateTooltips();
 		    });
 
@@ -378,6 +426,26 @@ $(document).ready(
 	    			});
 	        }
 		});
+
+		$("#compartirEmailForm").validate({
+			errorPlacement: function(error, element) {
+				error.appendTo( element.parent("td").next("td") );
+			},
+			rules: { email: {required: true, email: true}
+		},
+		messages: {
+			email: {required: "<img id='emailerror' src='images/unchecked.gif' hovertext='Ingrese el email.' />",
+					email: "<img id='emailerror' src='images/unchecked.gif' hovertext='Ingrese un email valido.' />"}
+		},
+			submitHandler: function() {
+	            $('#compartirEmailForm').ajaxSubmit({
+	    			type: "POST",
+	    			url: "./doCompartirEmail.php",
+	    			dataType: "json",
+	    			success: postCompartirEmail
+	    			});
+	        }
+		});
 		
 		/*$("#ticketForm").ajaxForm({
 			type: "POST",
@@ -433,6 +501,16 @@ function postRecordarPassword(data) {
 		showClaveEnviadaLigthBox();
 	} else {
 		setError('recPassEmail', data.error);
+	}
+}
+
+function postCompartirEmail(data) {
+	setError('emailcompartir', '');
+	if (data.success == 'yes') {
+		$.modal.close();
+		showCompartirEmailGraciasLigthBox();
+	} else {
+		setError('emailcompartir', data.error);
 	}
 }
 

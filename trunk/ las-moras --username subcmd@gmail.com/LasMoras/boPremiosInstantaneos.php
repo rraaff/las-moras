@@ -3,7 +3,8 @@
 	require("include/funcionesDB.php");
 	require("include/boCheckLogin.php");
 	
-	if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_FILES['imagen']['size'] > 0){
+	if ($_SERVER['REQUEST_METHOD'] == 'POST' 
+			&& $_FILES['imagen']['size'] > 0){
 		// Inicio conexion
 		$connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la conexion");
 		mysql_select_db(DB_NAME,$connection);
@@ -50,7 +51,27 @@
 <title>Las Moras</title>
 
 <?php include("include/headerBO.php"); ?>
-
+<script>
+$(document).ready(
+		function(){
+			$("#altaIWForm").validate({
+				rules: { descripcion: {required: true},
+						mensaje: {required: true},
+						imagen: {required: true},
+						inicio: {required: true},
+						fin: {required: true}
+				},
+				messages: {
+					descripcion: {required: "Ingrese la descripcion."}, 
+					mensaje: {required: "Ingrese el mensaje."},
+					imagen: {required: "Seleccione la imagen."},
+					inicio: {required: "Ingrese la fecha inicio."},
+					fin: {required: "Ingrese la fecha fin."},
+				}
+			});
+		}
+	);
+</script>
 </head>
 <body>
 
@@ -59,11 +80,11 @@
 	<form action="boPremiosInstantaneos.php" name="altaIWForm" id="altaIWForm" method="POST" enctype="multipart/form-data">
 		<input type="hidden" name="MAX_FILE_SIZE" value="10000000">
 		<table>
-			<tr><td>Descripcion</td><td><input type="text" name="descripcion"></td></tr>
-			<tr><td>Mensaje</td><td><input type="text" name="mensaje"></td></tr>
-			<tr><td>Imagen</td><td><input type="file" name="imagen" id="imagen"></td></tr>
-			<tr><td>Inicio</td><td><input type="text" name="inicio" id="inicio"></td></tr>
-			<tr><td>Fin</td><td><input type="text" name="fin" id="fin"></td></tr>
+			<tr><td>Descripcion</td><td><input type="text" name="descripcion"></td><td></td></tr>
+			<tr><td>Mensaje</td><td><input type="text" name="mensaje"></td><td></td></tr>
+			<tr><td>Imagen</td><td><input type="file" name="imagen" id="imagen"></td><td></td></tr>
+			<tr><td>Inicio</td><td><input type="text" name="inicio" id="inicio"></td><td></td></tr>
+			<tr><td>Fin</td><td><input type="text" name="fin" id="fin"></td><td></td></tr>
 			<tr><td colspan="2"><input type="submit"></td></tr>
 		</table>
 	</form>

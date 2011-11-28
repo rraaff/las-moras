@@ -83,6 +83,8 @@ a:hover {
 #basic-modal-win {display:none;}
 #basic-modal-claveEnviada {display:none;}
 #basic-modal-graciasPorRegistrarte {display:none;}
+#basic-modal-compartirEmail {display:none;}
+#basic-modal-compartirEmailGracias {display:none;}
 
 /* Login */
 /* Overlay */
@@ -217,6 +219,30 @@ a:hover {
 #registroGracias-container a {color:#ddd;}
 #registroGracias-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
 #registroGracias-container h3 {color:#d90e1c;}
+
+/* Compartir email */
+/* Overlay */
+#compartirEmail-overlay {background-color:#000; cursor:wait;}
+/* Container */
+#compartirEmail-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
+     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
+#compartirEmail-container .simplemodal-data {padding:8px;}
+#compartirEmail-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#compartirEmail-container a {color:#ddd;}
+#compartirEmail-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#compartirEmail-container h3 {color:#d90e1c;}
+
+/* agradecimiento compartir*/
+/* Overlay */
+#compartirEmailGracias-overlay {background-color:#000; cursor:wait;}
+/* Container */
+#compartirEmailGracias-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
+     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
+#compartirEmailGracias-container .simplemodal-data {padding:8px;}
+#compartirEmailGracias-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#compartirEmailGracias-container a {color:#ddd;}
+#compartirEmailGracias-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#compartirEmailGracias-container h3 {color:#d90e1c;}
 
 #tooltip {
 	position: absolute;
