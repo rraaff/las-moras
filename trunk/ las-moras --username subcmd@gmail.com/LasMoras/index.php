@@ -33,12 +33,12 @@
 </script>
 <style>
 em.error {
-  background:url("images/unchecked.gif") no-repeat 0px 0px;
-  padding-left: 16px;
+	background:url("images/unchecked.gif") no-repeat 0px 0px;
+/*  padding-left: 16px;*/
 }
 em.success {
-  background:url("images/checked.gif") no-repeat 0px 0px;
-  padding-left: 16px;
+	background:url("images/checked.gif") no-repeat 0px 0px;
+ /* padding-left: 16px;*/
 }
 em.error { color: black; }
 #warning { display: none; }
@@ -67,29 +67,80 @@ em.error { color: black; }
 </div>
 <!-- preload the images -->
 <div style="display:none">
-	<img src="img/basic/x.png" alt="" />
+	<img src="images/buttons/botonX.png" alt="" />
 	<img src="images/buttons/cargaElCodigo.gif" alt="" />
 	<img src="images/buttons/miraLosPremios.gif" alt="" />
 	<img src="images/buttons/fb.gif" alt="" />
 	<img src="images/buttons/tw.gif" alt="" />
 	<img src="images/buttons/email.gif" alt="" />
 </div>
-
+<!--
 <a href='#' class='registrate' id="registro">Registrate</a>
 <a href='#' class='recordarPassword' id="recordarPassword">Recordar password</a>
-
+-->
 <!-- modal registro display:block; -->
 <div id="basic-modal-registro">
 	<form action="doRegistro.php" name="registroForm" id="registroForm" method="POST">
-		<table border="1" cellpadding="0" cellspacing="0" id="registroTable">
-			<tr><td><input type="text" name="nombre"></td><td></td></tr>
-			<tr><td><input type="text" name="apellido"></td><td></td></tr>
-			<tr><td><input type="text" name="documento"></td><td></td></tr>
-			<tr><td><input type="text" name="email"></td><td width="25" id="emailerr"></td></tr>
-			<tr><td><input type="text" name="edad"></td><td></td></tr>
-			<tr><td><input type="text" name="usuario"></td><td width="25" id="usuarioerr"></td></tr>
-			<tr><td><input type="password" name="password"></td><td></td></tr>
-			<tr><td colspan="2"><input type="submit"></td></tr>
+		<table width="406" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="90" height="30"><img src="images/null.gif" width="90" height="10"></td>
+				<td width="300"><input type="text" name="nombre"></td>
+				<td width="16"></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="16"><img src="images/null.gif" width="20" height="16"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="text" name="apellido"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="18"><img src="images/null.gif" width="20" height="18"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="text" name="documento"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="14"><img src="images/null.gif" width="20" height="14"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="text" name="email"></td>
+				<td width="25" id="emailerr"></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="18"><img src="images/null.gif" width="20" height="18"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="text" name="edad"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="20"><img src="images/null.gif" width="20" height="20"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="text" name="usuario"></td>
+				<td width="25" id="usuarioerr"></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="18"><img src="images/null.gif" width="20" height="18"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="password" name="password"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="10"><img src="images/null.gif" width="20" height="10"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="right"><input type="submit" class="submitButton" value=" "></td>
+			</tr>
 		</table>
 	</form>
 </div>
@@ -97,13 +148,37 @@ em.error { color: black; }
 <!-- modal login -->
 <div id="basic-modal-login">
 	<form action="doLogin.php" name="loginForm" id="loginForm" method="POST">
-		<table width="380" border="0" bordercolor="#00FF00" cellpadding="0" cellspacing="0">
-			<tr><td width="85" height="30"></td><td width="295"><input type="text" name="usuario"></td><td id="loginusuarioerr"></td></tr>
-			<tr><td colspan="2" height="16"></td></tr>
-			<tr><td></td><td><input type="password" name="password"></td><td></td></tr>
-			<tr><td colspan="2" height="10"></td></tr>
-			<tr><td></td><td height="120" align="right"><input type="image" src="images/buttons/enviarDatos.png" width="158" height="47"></td></tr>
-			<tr><td colspan="2"><table cellpadding="0" cellspacing="0"><tr><td>SI NO EST&Aacute;S REGISTRADO, <br><a href="javascript:register()">HAC&Eacute; CLIC AC&Aacute;.</a></td><td width="30"></td><td>¿OLVIDASTE TU PASSWORD?,<br><a href="javascript:recordarPassword()">HAC&Eacute; CLIC AC&Aacute;.</a></td></tr></table></td></tr>
+		<table width="396" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="80" height="30"><img src="images/null.gif" width="80" height="10"></td>
+				<td width="300"><input type="text" name="usuario"></td>
+				<td width="16" id="loginusuarioerr"></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="16"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="password" name="password"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="10"></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="120" align="right"><input type="submit" class="loginButton" value=" "></td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td>SI NO EST&Aacute;S REGISTRADO, <br><a href="javascript:register()">HAC&Eacute; CLIC AC&Aacute;.</a></td>
+							<td width="60"></td>
+							<td>OLVIDASTE TU PASSWORD?,<br><a href="javascript:recordarPassword()">HAC&Eacute; CLIC AC&Aacute;.</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
 		</table>
 	</form>
 </div>
@@ -111,9 +186,18 @@ em.error { color: black; }
 <!-- modal carga codigo -->
 <div id="basic-modal-cargaCodigo">
 	<form action="doCargaTicket.php" name="ticketForm" id="ticketForm" method="POST">
-		<table>
-			<tr><td><input type="text" name="codigo" id="codigo"></td><td width="25" id="codigoerr"></td></tr>
-			<tr><td colspan="2"><input type="submit" style="background-image:url(images/buttons/cargarCodigo.png); width:156px; height:43px;"></td><td></td></tr>
+		<table width="406" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="140" height="30"></td>
+				<td width="241"><input type="text" name="codigo" id="codigo"></td>
+				<td width="25" id="codigoerr"></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="50"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="right"><input type="submit" class="codeButton" value=" " border="0"></td>
+			</tr>
 		</table>
 	</form>
 </div>
@@ -121,9 +205,18 @@ em.error { color: black; }
 <!-- modal recordar password -->
 <div id="basic-modal-recordarPassword">
 	<form action="doRecordarPassword.php" name="recordarPasswordForm" id="recordarPasswordForm" method="POST">
-		<table>
-			<tr><td>Email</td><td><input type="text" name="email" id="emailrecordar"></td><td width="25" id="recPassEmailerr"></td></tr>
-			<tr><td colspan="2"><input type="submit"></td></tr>
+		<table width="401" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="85" height="30"><img src="images/null.gif" width="85" height="10"></td>
+				<td width="290"><input type="text" name="email" id="emailrecordar"></td>
+				<td width="26" id="recPassEmailerr"></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="70"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="right"><input type="submit" class="passRecoveryButton" value=" " border="0"></td>
+			</tr>
 		</table>
 	</form>
 </div>
@@ -131,9 +224,18 @@ em.error { color: black; }
 <!-- modal share email-->
 <div id="basic-modal-compartirEmail">
 	<form action="doCompartirEmail.php" name="compartirEmailForm" id="compartirEmailForm" method="POST">
-		<table>
-			<tr><td>Email</td><td><input type="text" name="email" id="emailcompartir"></td><td width="25" id="emailcompartirerr"></td></tr>
-			<tr><td colspan="2"><input type="submit"></td></tr>
+		<table width="401" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="85" height="30"><img src="images/null.gif" width="85" height="10"></td>
+				<td width="290"><input type="text" name="email" id="emailcompartir"></td>
+				<td width="25" id="emailcompartirerr"></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="70"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="right"><input type="submit" class="shareButton" value=" " border="0"></td>
+			</tr>
 		</table>
 	</form>
 </div>
