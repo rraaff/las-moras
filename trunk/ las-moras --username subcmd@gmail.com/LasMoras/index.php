@@ -303,6 +303,7 @@ $(document).ready(
 				email: {required: "<img id='emailerror' src='images/unchecked.gif' hovertext='Ingrese el email.' />",
 						email: "<img id='emailerror' src='images/unchecked.gif' hovertext='Ingrese un email valido.' />"},
 				edad: {required: "<img id='edaderror' src='images/unchecked.gif' hovertext='Ingrese la edad.' />",
+						digits: "<img id='edaderror' src='images/unchecked.gif' hovertext='Ingrese un numero.' />",
 						min: "<img id='edaderror' src='images/unchecked.gif' hovertext='Para participar de la promo debe se mayor de edad.' />"},
 				usuario: {required: "<img id='usuarioerror' src='images/unchecked.gif' hovertext='Ingrese el usuario.' />"},
 				password: {required: "<img id='passworderror' src='images/unchecked.gif' hovertext='Ingrese el password.' />"},
@@ -447,7 +448,7 @@ function recordarPassword() {
 
 function setError(fieldId, err) {
 	var obj = document.getElementById(fieldId + "err");
-	if (err == '') {
+	if (err == null || err == '') {
 		obj.innerHTML = '';
 	} else {
 		obj.innerHTML = "<img id='"+fieldId + "error' src='images/unchecked.gif' hovertext='" + err + "' />";
