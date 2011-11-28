@@ -12,4 +12,5 @@
 <script type='text/javascript' src='js/jquery-ui-1.8.16.custom.min.js'></script>
 <script type='text/javascript' src='js/jquery-ui-timepicker-addon.js'></script>
 <script type='text/javascript' src='js/jquery.jbar.js'></script>
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
 <link href="css/jbar.css" media="screen" rel="stylesheet" type="text/css" />
