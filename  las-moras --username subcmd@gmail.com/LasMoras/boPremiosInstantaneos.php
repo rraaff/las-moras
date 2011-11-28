@@ -44,12 +44,23 @@
 		ORDER BY IW.inicio";
 	$res = doSelect($query);
 ?>
-<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Las Moras</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Finca Las Moras - Premia tu forma de disfrutar la vida - BACKOFFICE</title>
+<meta name="keywords" content="Vino, Tinto, Blanco, Finca Las Moras, Beber con moderaci�n" />
+<meta name="description" content="Finca Las Moras premia tu forma de disfrutar la vida" />
+<meta name="AUTHOR" content="That Day in London - Agencia Interactiva & Dise�o - para Publiquest" />
+<link rel="icon" href="./favicon.ico" type="icon"/>
+<!-- Contact Form CSS files -->
+<link type='text/css' href='css/tdil.css' rel='stylesheet' media='screen' />
+<style>
+	#content #page {
+	width: 850px;
+	padding: 0px;
+	margin-top: 20px;
+}
+</style>
 <?php include("include/headerBO.php"); ?>
 <script>
 $(document).ready(
@@ -74,31 +85,33 @@ $(document).ready(
 </script>
 </head>
 <body>
-
-<?php include("include/menuBO.php"); ?> <br>
+<div id="content">
+	<div id="hello">Hola <span class="remarcado"><?php echo($_SESSION['boNombre']);?> <?php echo($_SESSION['boApellido']);?></span></div>
+	<div id="portaMenu"><?php include("include/menuBO.php"); ?></div>
+	<div id="page">
 
 	<form action="boPremiosInstantaneos.php" name="altaIWForm" id="altaIWForm" method="POST" enctype="multipart/form-data">
 		<input type="hidden" name="MAX_FILE_SIZE" value="10000000">
-		<table>
+		<table cellpadding="5" cellspacing="0" border="0" align="center">
 			<tr><td>Descripcion</td><td><input type="text" name="descripcion"></td><td></td></tr>
 			<tr><td>Mensaje</td><td><input type="text" name="mensaje"></td><td></td></tr>
 			<tr><td>Imagen</td><td><input type="file" name="imagen" id="imagen"></td><td></td></tr>
 			<tr><td>Inicio</td><td><input type="text" name="inicio" id="inicio"></td><td></td></tr>
 			<tr><td>Fin</td><td><input type="text" name="fin" id="fin"></td><td></td></tr>
-			<tr><td colspan="2"><input type="submit"></td></tr>
+			<tr><td colspan="2" align="center"><input type="submit" name="submit2" value=" " class="saveButton"></td></tr>
 		</table>
 	</form>
 
-	<table>
-	<tr>
-		<td>Id</td>
-		<td>Descripcion</td>
-		<td>Inicio</td>
-		<td>Fin</td>
-		<td>Estado</td>
-		<td>Ganador</td>
-		<td>Borrar</td>
-	</tr>
+	<table width="100%" cellpadding="5" cellspacing="5" border="0">
+		<tr bgcolor="#CCCCCC">
+			<td>Id</td>
+			<td>Descripcion</td>
+			<td>Inicio</td>
+			<td>Fin</td>
+			<td>Estado</td>
+			<td>Ganador</td>
+			<td>Borrar</td>
+		</tr>
 <?php
 	$today = time();
 	while ($iw = mysql_fetch_array($res)){
@@ -185,6 +198,8 @@ $(document).ready(
 		}
 	)
 </script>
+	</div>
+</div>
 </body>
 </html>
 <?php } ?>

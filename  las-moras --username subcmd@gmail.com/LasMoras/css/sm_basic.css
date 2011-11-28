@@ -28,6 +28,15 @@ a:hover {
 	color:#aa0410;
 	text-decoration:underline;
 }
+img {
+	border:none;
+}
+input, input:hover, input:active, input:visited {
+	border: none;
+}
+.remarcado {
+	color:#aa0410;
+}
 #centralContent {
 	height: 600px;
 	width: 900px;
@@ -96,7 +105,6 @@ a:hover {
 	margin-left:50px;
 	filter:alpha(opacity=85); /* IE's opacity*/
 	opacity: 0.85;
-	border:1px dotted #00CC99;
 	background-image: url(../images/interfases/bgLogin.png);
 	background-repeat: no-repeat;
 	background-position: left top;
@@ -110,6 +118,21 @@ a:hover {
 	border: none;
 	width:280px;
 	color:#aa0410;
+	font-size: 14px;
+	line-height: normal;
+}
+#basic-modal-login #loginForm .loginButton {
+	background-image: url(../images/buttons/enviarDatos.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 56px;
+	width: 168px;
+	cursor: hand;
+	font-size: 10px;
+	margin: 0px;
+	padding: 0px;
+	/*border:1px dashed #212021;*/
+	border:none;
 }
 #login-container code { color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 /*#login-container a {color:#ddd;}*/
@@ -121,25 +144,43 @@ a:hover {
 #cargaCodigo-overlay {background-color:#000; cursor:wait;}
 /* Container */
 #cargaCodigo-container {
-	height:462px;
-	width:307px;
+	height:403px;
+	width:473px;
+	margin-left:50px;
 	filter:alpha(opacity=85); /* IE's opacity*/
 	opacity: 0.85;
-	border:0px;
 	background-image: url(../images/interfases/bgCargaCodigo.png);
+	background-repeat: no-repeat;
+	background-position: left top;
 }
-#cargaCodigo-container .simplemodal-data {padding:8px;}
+#cargaCodigo-container .simplemodal-data {
+	padding:40px;
+	margin-top:85px;
+}
+#cargaCodigo-container input {
+	background-color: transparent;
+	border: none;
+	width:240px;
+	color:#aa0410;
+	font-size: 14px;
+	line-height: normal;
+}
+#basic-modal-cargaCodigo #ticketForm .codeButton {
+	background-image: url(../images/buttons/cargarCodigo.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 43px;
+	width: 156px;
+	cursor: hand;
+	font-size: 10px;
+	padding-top: 25px;
+	padding-right: 90px;
+	padding-bottom: 25px;
+	padding-left: 90px;;
+}
 #cargaCodigo-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #cargaCodigo-container a {color:#ddd;}
-#cargaCodigo-container a.modalCloseImg {
-	background:url(../images/buttons/botonX.png) no-repeat;
-	width:36px;
-	height:37px;
-	display:inline;
-	z-index:3200;
-	position:absolute;
-	cursor:pointer;
-}
+#cargaCodigo-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:28px; right:45px; cursor:pointer;}
 #cargaCodigo-container h3 {color:#d90e1c;}
 
 /* Registro */
@@ -147,29 +188,92 @@ a:hover {
 #registro-overlay {background-color:#000; cursor:wait;}
 /* Container */
 #registro-container {
-	height:462px;
-	width:307px;
+	height:463px;
+	width:463px;
+	margin-left:50px;
 	filter:alpha(opacity=85); /* IE's opacity*/
 	opacity: 0.85;
-	border:0px;
-	background-image: url(../images/interfases/bgCargaCodigo.png);
+	background-image: url(../images/interfases/bgRegister.png);
+	background-repeat: no-repeat;
+	background-position: left top;
 }
-#registro-container .simplemodal-data {padding:8px;}
+#registro-container .simplemodal-data {
+	padding:40px;
+	margin-top:42px;
+}
+#registro-container input {
+	background-color: transparent;
+	border: none;
+	width:280px;
+	color:#aa0410;
+	font-size: 14px;
+	line-height: normal;
+}
+#basic-modal-registro #registroForm {
+	margin:0px;
+	padding:0px;
+}
+#basic-modal-registro #registroForm .submitButton {
+	background-image: url(../images/buttons/enviarDatos.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 56px;
+	width: 168px;
+	cursor: hand;
+	font-size: 10px;
+	margin: 0px;
+	padding: 0px;
+	/*border:1px dashed #212021;*/
+	border:none;
+}
 #registro-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #registro-container a {color:#ddd;}
-#registro-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#registro-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:28px; right:45px; cursor:pointer;}
 #registro-container h3 {color:#d90e1c;}
 
 /* Recordar password */
 /* Overlay */
 #recordarPassword-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#recordarPassword-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
-     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
-#recordarPassword-container .simplemodal-data {padding:8px;}
+#recordarPassword-container {
+	width:463px;
+	height:332px;
+	margin-left:50px;
+	filter:alpha(opacity=85); /* IE's opacity*/
+	opacity: 0.85;
+	background-image: url(../images/interfases/bgPasswordRecovery.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#recordarPassword-container .simplemodal-data {
+	padding:40px;
+	margin-top:80px;
+}
+#recordarPassword-container input {
+	background-color: transparent;
+	border: none;
+	width:280px;
+	color:#aa0410;
+	font-size: 14px;
+	line-height: normal;
+}
+#basic-modal-recordarPassword #recordarPasswordForm .passRecoveryButton {
+	background-image: url(../images/buttons/enviarDatos.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 56px;
+	width: 168px;
+	cursor: hand;
+	font-size: 10px;
+	margin: 0px;
+	padding: 0px;
+	/*border:1px dashed #212021;*/
+	border:none;
+}
+
 #recordarPassword-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #recordarPassword-container a {color:#ddd;}
-#recordarPassword-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#recordarPassword-container a.modalCloseImg { background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:28px; right:45px; cursor:pointer; }
 #recordarPassword-container h3 {color:#d90e1c;}
 
 /* codigo agradecimiento */
@@ -224,12 +328,44 @@ a:hover {
 /* Overlay */
 #compartirEmail-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#compartirEmail-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
-     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
-#compartirEmail-container .simplemodal-data {padding:8px;}
+#compartirEmail-container {
+	width:463px;
+	height:332px;
+	margin-left:50px;
+	filter:alpha(opacity=85); /* IE's opacity*/
+	opacity: 0.85;
+	background-image: url(../images/interfases/bgShareToFriend.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#compartirEmail-container .simplemodal-data {
+	padding:40px;
+	margin-top:80px;
+}
+#compartirEmail-container input {
+	background-color: transparent;
+	border: none;
+	width:280px;
+	color:#aa0410;
+	font-size: 14px;
+	line-height: normal;
+}
+#basic-modal-compartirEmail #compartirEmailForm .shareButton {
+	background-image: url(../images/buttons/enviarDatos.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 56px;
+	width: 168px;
+	cursor: hand;
+	font-size: 10px;
+	margin: 0px;
+	padding: 0px;
+	/*border:1px dashed #212021;*/
+	border:none;
+}
 #compartirEmail-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #compartirEmail-container a {color:#ddd;}
-#compartirEmail-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#compartirEmail-container a.modalCloseImg { background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:28px; right:45px; cursor:pointer; }
 #compartirEmail-container h3 {color:#d90e1c;}
 
 /* agradecimiento compartir*/
@@ -249,8 +385,8 @@ a:hover {
 	z-index: 3000;
 	border: 1px solid #111;
 	background-color: #eee;
-	padding: 5px;
+	padding: 20px;
 	opacity: 0.85;
-	color: red;
+	color: #aa0410;
 }
 #tooltip h3, #tooltip div { margin: 0; }

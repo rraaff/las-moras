@@ -39,22 +39,84 @@
 ?>
 <html>
 <head>
-<title>Basic Login Script</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Finca Las Moras - Premia tu forma de disfrutar la vida - BACKOFFICE</title>
+<meta name="keywords" content="Vino, Tinto, Blanco, Finca Las Moras, Beber con moderaci�n" />
+<meta name="description" content="Finca Las Moras premia tu forma de disfrutar la vida" />
+<meta name="AUTHOR" content="That Day in London - Agencia Interactiva & Dise�o - para Publiquest" />
+<link rel="icon" href="./favicon.ico" type="icon"/>
+<!-- Contact Form CSS files -->
+<link type='text/css' href='css/tdil.css' rel='stylesheet' media='screen' />
+<style>
+body {
+	background-image: url(images/fondoLoginBO.jpg);
+}
+input {
+	background-color: transparent;
+	border: none;
+	width:280px;
+	color:#aa0410;
+	font-family: "Univers LT", Geneva, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: normal;
+}
+#login {
+	height: auto;
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#login #field1 {
+	width: 300px;
+	margin-left: 340px;
+	margin-top: 95px;
+}
+#login #field2 {
+	width: 300px;
+	margin-top: 20px;
+	margin-left: 340px;
+}
+#login .ingresarButton {
+	background-image: url(images/buttons/ingresar.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height:51px;
+	width:205px;
+	cursor: hand;
+	font-size: 10px;
+	margin: 0px;
+	padding: 0px;
+	/*border:1px dashed #212021;*/
+	border:none;
+}
+#login #aclaracion {
+	text-align: center;
+	width: 350px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 220px;
+	padding-left: 60px;
+	height: auto;
+}
+#login #buttonAreas {
+	width: 250px;
+	margin-top: 20px;
+	margin-left: 400px;
+}
+</style>
 </head>
 <body>
 
 <FORM NAME ="form1" METHOD ="POST" ACTION ="boLogin.php">
-
-Username: <INPUT TYPE = 'TEXT' Name ='usuario'  value="<?PHP print $_POST['usuario'];?>" maxlength="20">
-Password: <INPUT TYPE = 'TEXT' Name ='password'  value="<?PHP print $_POST['password'];?>" maxlength="20">
-
-<P align = center>
-<INPUT TYPE = "Submit" Name = "Submit1"  VALUE = "Login">
-</P>
-
+<div id="login">
+	<div id="aclaracion">
+		<p>Bienvenido al BackOffice de la promoci&oacute;n<br/><span class="remarcado">RECOMPENSA TU FORMA DE DISFRUTAR LA VIDA.</span></p>
+	</div>
+	<div id="field1"><INPUT TYPE = 'TEXT' Name ='usuario'  value="<?PHP print $_POST['usuario'];?>" maxlength="20"></div>
+	<div id="field2"><INPUT TYPE = 'TEXT' Name ='password'  value="<?PHP print $_POST['password'];?>" maxlength="20"></div>
+	<div id="buttonAreas"><input type="submit" name="Submit1" value=" " class="ingresarButton"></div>
+</div>
 </FORM>
-
-<P>
 <?PHP print $errorMessage;?>
 </body>
 </html>

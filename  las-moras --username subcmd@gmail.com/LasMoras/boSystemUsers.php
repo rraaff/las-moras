@@ -19,34 +19,43 @@
 		ORDER BY fechaCreacion";
 	$res = doSelect($query);
 ?>
-<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Las Moras</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Finca Las Moras - Premia tu forma de disfrutar la vida - BACKOFFICE</title>
+<meta name="keywords" content="Vino, Tinto, Blanco, Finca Las Moras, Beber con moderaci�n" />
+<meta name="description" content="Finca Las Moras premia tu forma de disfrutar la vida" />
+<meta name="AUTHOR" content="That Day in London - Agencia Interactiva & Dise�o - para Publiquest" />
+<link rel="icon" href="./favicon.ico" type="icon"/>
+<!-- Contact Form CSS files -->
+<link type='text/css' href='css/tdil.css' rel='stylesheet' media='screen' />
+<style>
+	#content #page {
+	width: 850px;
+	padding: 0px;
+	margin-top: 20px;
+}
+</style>
 <?php include("include/headerBO.php"); ?>
-
 </head>
-
-
 <body>
-<?php if(!isset($_GET['excel'])) { ?>
-<?php include("include/menuBO.php"); ?> <br>
-<?php } ?>
-	<table>
-	<tr>
-		<td>Fecha de registro</td>
-		<td>Fecha de ultimo login</td>
-		<td>Cantidad de codigos</td>
-		<td>Fecha de ultima carga</td>
-		<td>Nombre</td>
-		<td>Apellido</td>
-		<td>Documento</td>
-		<td>Edad</td>
-		<td>Usuario</td>
-		<td>Email</td>
-	</tr>
+<div id="content">
+	<div id="hello">Hola <span class="remarcado"><?php echo($_SESSION['boNombre']);?> <?php echo($_SESSION['boApellido']);?></span></div>
+	<div id="portaMenu"><?php if(!isset($_GET['excel'])) { ?><?php include("include/menuBO.php"); ?><?php } ?></div>
+	<div id="page">
+		<table width="100%" cellpadding="5" cellspacing="5" border="0">
+			<tr bgcolor="#CCCCCC">
+				<td>Fecha de registro</td>
+				<td>Fecha de ultimo login</td>
+				<td>Cantidad de codigos</td>
+				<td>Fecha de ultima carga</td>
+				<td>Nombre</td>
+				<td>Apellido</td>
+				<td>Documento</td>
+				<td>Edad</td>
+				<td>Usuario</td>
+				<td>Email</td>
+			</tr>
 <?php
 	while ($iw = mysql_fetch_array($res)){
 ?>
@@ -72,9 +81,11 @@
 	} 
 ?>
 </table>
+<div align="center" style="margin-top:30px;">
 <?php if(!isset($_GET['excel'])) { ?>
-	<a href="boSystemUsers.php?excel=true">Excel</a>
+	<a href="boSystemUsers.php?excel=true"><img src="images/buttons/exportar.gif" width="168" height="51" border="0"></a>
 <?php } ?>
+</div>
 <script>
 
 $(document).ready(
@@ -102,5 +113,6 @@ $(document).ready(
 		}
 	)
 </script>
+</div>
 </body>
 </html>
