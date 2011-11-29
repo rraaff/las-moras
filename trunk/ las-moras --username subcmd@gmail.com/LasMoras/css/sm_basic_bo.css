@@ -14,10 +14,10 @@
 /* Overlay */
 #winner-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#winner-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
+#winner-container {height:180px; width:300px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
      opacity: 0.75; background-color:#000; border:0px; padding:12px;}
 #winner-container .simplemodal-data {padding:8px;}
 #winner-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #winner-container a {color:#ddd;}
-#winner-container a.modalCloseImg {background:url(../img/basic/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#winner-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:18px; right:010px; cursor:pointer;}
 #winner-container h3 {color:#84b8d9;}

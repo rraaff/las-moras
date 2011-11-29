@@ -92,22 +92,24 @@ $(document).ready(
 
 	<form action="boPremiosInstantaneos.php" name="altaIWForm" id="altaIWForm" method="POST" enctype="multipart/form-data">
 		<input type="hidden" name="MAX_FILE_SIZE" value="10000000">
-		<table cellpadding="5" cellspacing="0" border="0" align="center">
-			<tr><td>Descripcion</td><td><input type="text" name="descripcion"></td><td></td></tr>
-			<tr><td>Mensaje</td><td><input type="text" name="mensaje"></td><td></td></tr>
-			<tr><td>Imagen</td><td><input type="file" name="imagen" id="imagen"></td><td></td></tr>
-			<tr><td>Inicio</td><td><input type="text" name="inicio" id="inicio"></td><td></td></tr>
-			<tr><td>Fin</td><td><input type="text" name="fin" id="fin"></td><td></td></tr>
-			<tr><td colspan="2" align="center"><input type="submit" name="submit2" value=" " class="saveButton"></td></tr>
-		</table>
+		<div align="center">
+			<table cellpadding="5" cellspacing="5" border="0" align="center">
+				<tr><td>Descripci&oacute;n</td><td><input type="text" name="descripcion"></td><td class="remarcado"></td></tr>
+				<tr><td>Mensaje</td><td><input type="text" name="mensaje"></td><td class="remarcado"></td></tr>
+				<tr><td>Imagen</td><td><input type="file" name="imagen" id="imagen"></td><td class="remarcado"></td></tr>
+				<tr><td>Desde</td><td><input type="text" name="inicio" id="inicio"></td><td class="remarcado"></td></tr>
+				<tr><td>Hasta</td><td><input type="text" name="fin" id="fin"></td><td class="remarcado"></td></tr>
+				<tr><td colspan="2" align="center"><input type="submit" name="submit2" value=" " class="saveButton"></td></tr>
+			</table>
+		</div>
 	</form>
 
 	<table width="100%" cellpadding="5" cellspacing="5" border="0">
 		<tr bgcolor="#CCCCCC">
 			<td>Id</td>
-			<td>Descripcion</td>
-			<td>Inicio</td>
-			<td>Fin</td>
+			<td>Descripci&oacute;n</td>
+			<td>Desde</td>
+			<td>Hasta</td>
 			<td>Estado</td>
 			<td>Ganador</td>
 			<td>Borrar</td>

@@ -47,14 +47,14 @@
 			<tr bgcolor="#CCCCCC">
 				<td>Fecha de registro</td>
 				<td>Fecha de ultimo login</td>
-				<td>Cantidad de codigos</td>
-				<td>Fecha de ultima carga</td>
+				<td>Cant. de c&oacute;digos</td>
+				<td>Fecha de &Uacute;ltima carga</td>
 				<td>Nombre</td>
 				<td>Apellido</td>
 				<td>Documento</td>
 				<td>Edad</td>
 				<td>Usuario</td>
-				<td>Email</td>
+				<td>E-mail</td>
 			</tr>
 <?php
 	while ($iw = mysql_fetch_array($res)){

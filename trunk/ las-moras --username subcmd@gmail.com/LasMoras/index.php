@@ -8,9 +8,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <title>Finca Las Moras - Premia tu forma de disfrutar la vida</title>
-<meta name="keywords" content="Vino, Tinto, Blanco, Finca Las Moras, Beber con moderación" />
+<meta name="keywords" content="Vino, Tinto, Blanco, Finca Las Moras, Beber con moderaci&oacute;n" />
 <meta name="description" content="Finca Las Moras premia tu forma de disfrutar la vida" />
-<meta name="AUTHOR" content="That Day in London - Agencia Interactiva & Diseño - para Publiquest" />
+<meta name="AUTHOR" content="That Day in London - Agencia Interactiva & Dise&ntilde;o - para Publiquest" />
 <link rel="icon" href="./favicon.ico" type="icon"/>
 <!-- Contact Form CSS files -->
 <link type='text/css' href='css/sm_basic.css' rel='stylesheet' media='screen' />
@@ -90,12 +90,12 @@ em.error { color: black; }
 	<form action="doRegistro.php" name="registroForm" id="registroForm" method="POST">
 		<table width="406" border="0" cellpadding="0" cellspacing="0">
 			<tr>
-				<td width="90" height="30"><img src="images/null.gif" width="90" height="10"></td>
-				<td width="300"><input type="text" name="nombre"></td>
+				<td width="95" height="30"><img src="images/null.gif" width="90" height="10"></td>
+				<td width="295"><input type="text" name="nombre"></td>
 				<td width="16"></td>
 			</tr>
 			<tr>
-				<td colspan="3" height="16"><img src="images/null.gif" width="20" height="16"></td>
+				<td colspan="3" height="20"><img src="images/null.gif" width="20" height="20"></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -103,7 +103,7 @@ em.error { color: black; }
 				<td></td>
 			</tr>
 			<tr>
-				<td colspan="3" height="18"><img src="images/null.gif" width="20" height="18"></td>
+				<td colspan="3" height="22"><img src="images/null.gif" width="20" height="22"></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -111,7 +111,7 @@ em.error { color: black; }
 				<td></td>
 			</tr>
 			<tr>
-				<td colspan="3" height="14"><img src="images/null.gif" width="20" height="14"></td>
+				<td colspan="3" height="20"><img src="images/null.gif" width="20" height="20"></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -119,7 +119,7 @@ em.error { color: black; }
 				<td width="25" id="emailerr"></td>
 			</tr>
 			<tr>
-				<td colspan="3" height="18"><img src="images/null.gif" width="20" height="18"></td>
+				<td colspan="3" height="24"><img src="images/null.gif" width="20" height="24"></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -127,7 +127,7 @@ em.error { color: black; }
 				<td></td>
 			</tr>
 			<tr>
-				<td colspan="3" height="20"><img src="images/null.gif" width="20" height="20"></td>
+				<td colspan="3" height="24"><img src="images/null.gif" width="20" height="24"></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -135,7 +135,7 @@ em.error { color: black; }
 				<td width="25" id="usuarioerr"></td>
 			</tr>
 			<tr>
-				<td colspan="3" height="18"><img src="images/null.gif" width="20" height="18"></td>
+				<td colspan="3" height="22"><img src="images/null.gif" width="20" height="22"></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -143,7 +143,7 @@ em.error { color: black; }
 				<td></td>
 			</tr>
 			<tr>
-				<td colspan="3" height="10"><img src="images/null.gif" width="20" height="10"></td>
+				<td colspan="3" height="20"><img src="images/null.gif" width="20" height="20"></td>
 			</tr>
 			<tr>
 				<td colspan="3" align="right"><input type="submit" class="submitButton" value=" "></td>

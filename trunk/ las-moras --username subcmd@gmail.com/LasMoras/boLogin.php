@@ -57,7 +57,7 @@ input {
 	width:280px;
 	color:#aa0410;
 	font-family: "Univers LT", Geneva, Arial, Helvetica, sans-serif;
-	font-size: 14px;
+	font-size: 12px;
 	line-height: normal;
 }
 #login {
@@ -73,8 +73,13 @@ input {
 }
 #login #field2 {
 	width: 300px;
-	margin-top: 20px;
+	margin-top: 25px;
 	margin-left: 340px;
+}
+#login #errorMessage {
+	text-align: center;
+	padding-left: 150px;
+	margin-top: 50px;
 }
 #login .ingresarButton {
 	background-image: url(images/buttons/ingresar.gif);
@@ -113,10 +118,13 @@ input {
 		<p>Bienvenido al BackOffice de la promoci&oacute;n<br/><span class="remarcado">RECOMPENSA TU FORMA DE DISFRUTAR LA VIDA.</span></p>
 	</div>
 	<div id="field1"><INPUT TYPE = 'TEXT' Name ='usuario'  value="<?PHP print $_POST['usuario'];?>" maxlength="20"></div>
-	<div id="field2"><INPUT TYPE = 'TEXT' Name ='password'  value="<?PHP print $_POST['password'];?>" maxlength="20"></div>
+	<div id="field2">
+		<input type = 'password' name ='password'  value="<?PHP print $_POST['password'];?>" maxlength="20">
+	</div>
+	<div id="errorMessage"><span class="remarcado"><?PHP print $errorMessage;?></span></div>
 	<div id="buttonAreas"><input type="submit" name="Submit1" value=" " class="ingresarButton"></div>
 </div>
 </FORM>
-<?PHP print $errorMessage;?>
+
 </body>
 </html>
