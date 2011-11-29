@@ -57,7 +57,14 @@ em.error { color: black; }
 <div id="centralContent">
 	<div id="promoButtons"><a href='#' class='cargaCodigo' id="cargaCodigo"><img src="images/buttons/cargaElCodigo.gif" width="336" height="45" border="0"></a><a href="premios.html"><img src="images/buttons/miraLosPremios.gif" width="336" height="45" border="0"></a></div>
 	<div id="footer">
-		<div id="legal"><a href="javascript:openLegal();">Bases y condiciones del sitio</a><br/><br/><a href="#">No soy >>>>PABLO (acá va el logoff)<<<<<</a></div>
+		<div id="legal"><a href="javascript:openLegal();">Bases y condiciones del sitio</a><br/><br/>
+		<?php if (!(isset($_SESSION['Login']) && $_SESSION['Login'] == 1)) { ?>
+			<a id="logoutLink" style="visibility:hidden;" href="logout.php">No soy</a>
+		<?php } else {
+		?>
+			<a id="logoutLink" href="logout.php">No soy <?php echo $_SESSION['Nombre'] ?> <?php echo $_SESSION['Apellido'] ?></a>
+		<?php } ?>
+		</div>
 		<div id="socialHub">
 			<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>
 			<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-lang="es">Twittear</a><br>
@@ -601,6 +608,8 @@ function postLogin(data) {
 	if (data.success == 'yes') {
 		logged = true;
 		$.modal.close();
+		document.getElementById("logoutLink").innerHTML = "No soy " + data.nombre + " " + data.apellido;
+		document.getElementById("logoutLink").style.visibility = "visible";
 		showCargaCodigoLigthBox();
 	} else {
 		setError('loginusuario', data.error);

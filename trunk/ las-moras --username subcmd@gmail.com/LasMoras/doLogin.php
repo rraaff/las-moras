@@ -28,12 +28,14 @@
 			$_SESSION['Id'] = $user['id'];
 			
 			// login
+			$nombre = $user['nombre'];
+			$apellido = $user['apellido'];
 			$systemUserID = $user['id'];
 			$query = "INSERT INTO LOGINS (systemUserID, fechaLogin)
 			VALUES ($systemUserID, NOW() )";
 			$res = mysql_query($query,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
 			
-			$output = '{ "success": "yes", "error": "" }';
+			$output = '{ "success": "yes", "error": "" , "nombre": "' .$nombre . '", "apellido": "' .$apellido. '"}';
 		} else {
 // 			no esta registrado
 			$output = '{ "success": "no", "error": "No esta registrado." }';
