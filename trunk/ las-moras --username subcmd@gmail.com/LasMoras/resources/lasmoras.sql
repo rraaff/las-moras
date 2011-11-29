@@ -15,7 +15,7 @@ CREATE  TABLE `BOUSER` (
   INDEX `BOUNAME` (`usuario` ASC) );
 
 INSERT INTO BOUSER(nombre, apellido, email, usuario, password)
-VALUES ('marcos rafael', 'godoy', 'aas@ssdd.com', 'godoy', 'godoy'); 
+VALUES ('lasmoras', 'lasmoras', 'aas@ssdd.com', 'lasmoras', 'lasmoras'); 
 
 INSERT INTO BOUSER(nombre, apellido, email, usuario, password)
 VALUES ('pablo', 'mendoza', 'aas@ssdd.com', 'mendoza', 'mendoza'); 
