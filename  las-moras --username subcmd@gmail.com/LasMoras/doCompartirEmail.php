@@ -9,7 +9,6 @@
 	mysql_select_db(DB_NAME,$connection);
 
 	$email = $_POST['email'];	
-	$email = quote_smart($email, $connection);
 	
 		$mail = new PHPMailer(); // defaults to using php "mail()"
 		
@@ -20,8 +19,8 @@
 		//Headers
 		$headers['X-Mailer'] = 'X-Mailer: PHP/' . phpversion();
 		$mail -> AddCustomHeader($headers);
-		$mail->Subject    = PASSWORD_REMINDER_SUBJECT;
-		$mail->AltBody    = PASSWORD_REMINDER_BODY_ALT;
+		$mail->Subject    = COMPARTIR_SUBJECT;
+		$mail->AltBody    = COMPARTIR_BODY_ALT;
 		$body             = $mail->getFile('compartir.html');
 		$mail->MsgHTML("$body");
 		$mail->AddAddress("$email");
