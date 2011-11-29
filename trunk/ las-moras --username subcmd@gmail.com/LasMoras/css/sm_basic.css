@@ -75,12 +75,13 @@ input, input:hover, input:active, input:visited {
 	color: #464646;
 }
 #centralContent #footer #legal a:hover, #centralContent #footer #legal a:active, #centralContent #footer #legal a:visited {
+	color:#aa0410;
 	text-decoration: underline;
 }
 #centralContent #footer #socialHub {
 	float: right;
 	height: 30px;
-	width: 113px;
+	width: 213px;
 	margin-right: 14px;
 }
 
@@ -280,36 +281,66 @@ input, input:hover, input:active, input:visited {
 /* Overlay */
 #codigoGracias-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#codigoGracias-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
-     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
+#codigoGracias-container {
+	width:457px;
+	height:403px;
+	margin-left:50px;
+	filter:alpha(opacity=85); /* IE's opacity*/
+	opacity: 0.85;
+	background-image: url(../images/interfases/bgGraciasCodigo.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
 #codigoGracias-container .simplemodal-data {padding:8px;}
 #codigoGracias-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #codigoGracias-container a {color:#ddd;}
-#codigoGracias-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#codigoGracias-container a.modalCloseImg { background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:28px; right:45px; cursor:pointer; }
 #codigoGracias-container h3 {color:#d90e1c;}
 
 /* codigo iw */
 /* Overlay */
 #codigoWin-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#codigoWin-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
-     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
-#codigoWin-container .simplemodal-data {padding:8px;}
+#codigoWin-container {
+	width:457px;
+	height:403px;
+	margin-left:50px;
+	/*filter:alpha(opacity=85); /* IE's opacity*/
+	/*opacity: 0.85;*/
+	background-image: url(../images/interfases/bgPremioInstantaneo.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#codigoWin-container .simplemodal-data {
+	margin-left:20px;
+	margin-top:125px;
+}
 #codigoWin-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #codigoWin-container a {color:#ddd;}
-#codigoWin-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#codigoWin-container a.modalCloseImg { background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:25px; right:35px; cursor:pointer; }
 #codigoWin-container h3 {color:#d90e1c;}
 
 /* clave enviada */
 /* Overlay */
 #claveEnviada-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#claveEnviada-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
-     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
-#claveEnviada-container .simplemodal-data {padding:8px;}
+#claveEnviada-container {
+	width:459px;
+	height:332px;
+	margin-left:50px;
+	filter:alpha(opacity=85); /* IE's opacity*/
+	opacity: 0.85;
+	background-image: url(../images/interfases/bgMailRecoveryDone.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#claveEnviada-container .simplemodal-data {
+	padding:0px;
+	margin-top:0px;
+}
 #claveEnviada-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #claveEnviada-container a {color:#ddd;}
-#claveEnviada-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#claveEnviada-container a.modalCloseImg { background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:28px; right:45px; cursor:pointer; }
 #claveEnviada-container h3 {color:#d90e1c;}
 
 /* Registro gracias */
