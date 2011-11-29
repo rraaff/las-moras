@@ -19,7 +19,6 @@
 	if ($result_tickets) {
 		// Si no fue cargado, lo cargo
 		if ($num_rows_tickets == 0) {
-			$user = mysql_fetch_array($result);
 			$insertTicket = "INSERT INTO TICKETS (systemuserID, ticket, fechaCarga) VALUES ($userID, $ticket, NOW() )";
 			$res = mysql_query($insertTicket,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
 			$returnInsert = mysql_insert_id($connection);
