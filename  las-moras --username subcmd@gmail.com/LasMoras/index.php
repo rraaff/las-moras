@@ -555,6 +555,9 @@ $(document).ready(
 			dataType: "json",
 			success: postCargaCodigo
 			});*/
+
+		/* PABLO BORRAR */
+		showRegistradoLigthBox();
 	}
 
 );
