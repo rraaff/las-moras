@@ -242,17 +242,25 @@ em.error { color: black; }
 
 <!-- modal gracias por compartir -->
 <div id="basic-modal-compartirEmailGracias">
-	<table>
-		<tr><td>Gracias por compartir.</td></tr>
-		<tr><td colspan="2"><input type="button" onclick="closeCurrentModal()"></td></tr>
+	<table width="457" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td height="300"><img src="images/null.gif" width="1" height="300"></td>
+		</tr>
+		<tr>
+			<td align="center"><a href="javascript:closeCurrentModal();">sss</a></td>
+		</tr>
 	</table>
 </div>
 
 <!-- modal gracias por registrarte -->
 <div id="basic-modal-graciasPorRegistrarte">
-	<table>
-		<tr><td>Gracias por registrarte, ya podes cargar codigos.</td></tr>
-		<tr><td colspan="2"><input type="button" onclick="closeCurrentModal()"></td></tr>
+	<table width="420" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td height="300"><img src="images/null.gif" width="1" height="300"></td>
+		</tr>
+		<tr>
+			<td align="right"><a href="javascript:closeCurrentModal();"><img src="images/buttons/ingresar.png" width="159" height="45" border="0"></a></td>
+		</tr>
 	</table>
 </div>
 
@@ -548,16 +556,7 @@ $(document).ready(
 	    			});
 	        }
 		});
-		
-		/*$("#ticketForm").ajaxForm({
-			type: "POST",
-			url: "./doCargaTicket.php",
-			dataType: "json",
-			success: postCargaCodigo
-			});*/
 
-		/* PABLO BORRAR */
-		showRegistradoLigthBox();
 	}
 
 );

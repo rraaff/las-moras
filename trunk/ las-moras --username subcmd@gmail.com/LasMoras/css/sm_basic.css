@@ -316,12 +316,23 @@ input, input:hover, input:active, input:visited {
 /* Overlay */
 #registroGracias-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#registroGracias-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
-     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
-#registroGracias-container .simplemodal-data {padding:8px;}
+#registroGracias-container {
+	width:457px;
+	height:403px;
+	margin-left:50px;
+	filter:alpha(opacity=85); /* IE's opacity*/
+	opacity: 0.85;
+	background-image: url(../images/interfases/bgGraciasRegistro.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#registroGracias-container .simplemodal-data {
+	padding:0px;
+	margin-top:0px;
+}
 #registroGracias-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #registroGracias-container a {color:#ddd;}
-#registroGracias-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#registroGracias-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:30px; right:30px; cursor:pointer;}
 #registroGracias-container h3 {color:#d90e1c;}
 
 /* Compartir email */
@@ -372,12 +383,20 @@ input, input:hover, input:active, input:visited {
 /* Overlay */
 #compartirEmailGracias-overlay {background-color:#000; cursor:wait;}
 /* Container */
-#compartirEmailGracias-container {height:360px; width:400px; color:#bbb; filter:alpha(opacity=75); /* IE's opacity*/
-     opacity: 0.75; background-color:#000; border:0px; padding:12px;}
+#compartirEmailGracias-container {
+	width:458px;
+	height:403px;
+	margin-left:50px;
+	filter:alpha(opacity=85); /* IE's opacity*/
+	opacity: 0.85;
+	background-image: url(../images/interfases/bgGraciasCompartir.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
 #compartirEmailGracias-container .simplemodal-data {padding:8px;}
 #compartirEmailGracias-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #compartirEmailGracias-container a {color:#ddd;}
-#compartirEmailGracias-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#compartirEmailGracias-container a.modalCloseImg {background:url(../images/buttons/botonX.png) no-repeat; width:36px; height:37px; display:inline; z-index:3200; position:absolute; top:28px; right:45px; cursor:pointer;}
 #compartirEmailGracias-container h3 {color:#d90e1c;}
 
 #tooltip {
