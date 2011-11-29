@@ -50,7 +50,7 @@
 					$_SESSION['Nombre'] = $nombre;
 					$_SESSION['Apellido'] = $apellido;
 					$_SESSION['Id'] = $returnInsert;
-					$output = '{ "success": "yes", "error": "" }';
+					$output = '{ "success": "yes", "error": "" , "nombre": "' .$_POST['nombre'] . '", "apellido": "' .$_POST['apellido']. '"}';
 				}
 			} else {
 				$output = '{ "success": "no", "error": "Error generico." }';

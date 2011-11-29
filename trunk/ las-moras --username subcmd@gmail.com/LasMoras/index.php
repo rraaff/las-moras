@@ -597,6 +597,8 @@ function postRegisto(data) {
 	if (data.success == 'yes') {
 		logged = true;
 		$.modal.close();
+		document.getElementById("logoutLink").innerHTML = "No soy " + data.nombre + " " + data.apellido;
+		document.getElementById("logoutLink").style.visibility = "visible";
 		showRegistradoLigthBox();
 	} else {
 		setError('usuario', data.usuario);
