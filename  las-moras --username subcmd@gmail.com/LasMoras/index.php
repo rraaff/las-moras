@@ -57,7 +57,7 @@ em.error { color: black; }
 <div id="centralContent">
 	<div id="promoButtons"><a href='#' class='cargaCodigo' id="cargaCodigo"><img src="images/buttons/cargaElCodigo.gif" width="336" height="45" border="0"></a><a href="premios.html"><img src="images/buttons/miraLosPremios.gif" width="336" height="45" border="0"></a></div>
 	<div id="footer">
-		<div id="legal"><a href="javascript:openLegal();">Bases y condiciones del sitio</a></div>
+		<div id="legal"><a href="javascript:openLegal();">Bases y condiciones del sitio</a><br/><br/><a href="#">No soy >>>>PABLO (acá va el logoff)<<<<<</a></div>
 		<div id="socialHub">
 			<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>
 			<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-lang="es">Twittear</a><br>
@@ -246,9 +246,6 @@ em.error { color: black; }
 		<tr>
 			<td height="300"><img src="images/null.gif" width="1" height="300"></td>
 		</tr>
-		<tr>
-			<td align="center"><a href="javascript:closeCurrentModal();">sss</a></td>
-		</tr>
 	</table>
 </div>
 
@@ -266,27 +263,37 @@ em.error { color: black; }
 
 <!-- modal gracias por cargar -->
 <div id="basic-modal-gracias">
-	<table>
-		<tr><td>Gracias por ingresar el codigo.</td></tr>
-		<tr><td>Ya esta participando del sorteo.</td></tr>
-		<tr><td colspan="2"><input type="button" onclick="closeCurrentModal()"></td></tr>
+	<table width="420" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td height="300"><img src="images/null.gif" width="1" height="300"></td>
+		</tr>
 	</table>
 </div>
 
 <!-- modal instant win -->
 <div id="basic-modal-win">
-	<table>
-		<tr><td><div id="detallePremio"></div></td></tr>
-		<tr><td><div id="imagenPremio"></div></td></tr>
-		<tr><td colspan="2"><input type="button" onclick="closeCurrentModal()"></td></tr>
+	<table width="420" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td align="center"><div id="detallePremio"></div></td>
+		</tr>
+		<tr>
+			<td align="center"><div id="imagenPremio"></div></td>
+		</tr>
+		<tr>
+			<td height="50" align="center">Comunicate al <span class="remarcado">0800-LASMORAS</span><br/>para coordinar la entrega de tu premio</td>
+		</tr>
 	</table>
 </div>
 
 <!-- modal clave eviada-->
 <div id="basic-modal-claveEnviada">
-	<table>
-		<tr><td>Se envio el usuario y clave a tu email</tr>
-		<tr><td colspan="2"><input type="button" onclick="closeCurrentModal()"></td></tr>
+	<table width="420" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td height="230"><img src="images/null.gif" width="1" height="230"></td>
+		</tr>
+		<tr>
+			<td align="right"><a href="javascript:closeCurrentModal();"><img src="images/buttons/cerrar.png" width="157" height="44" border="0"></a></td>
+		</tr>
 	</table>
 </div>
 
@@ -556,7 +563,9 @@ $(document).ready(
 	    			});
 	        }
 		});
-
+		/**/
+		// espacio para test
+		/**/
 	}
 
 );
