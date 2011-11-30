@@ -478,7 +478,7 @@ $(document).ready(
 						digits: "<img id='edaderror' src='images/unchecked.gif' hovertext='Ingrese un numero.' />",
 						min: "<img id='edaderror' src='images/unchecked.gif' hovertext='Para participar de la promo debe se mayor de edad.' />"},
 				usuario: {required: "<img id='usuarioerror' src='images/unchecked.gif' hovertext='Ingrese el usuario.' />"},
-				password: {required: "<img id='passworderror' src='images/unchecked.gif' hovertext='Ingrese el password.' />"},
+				password: {required: "<img id='passworderror' src='images/unchecked.gif' hovertext='Ingrese el password.' />"}
 			},
 			submitHandler: function() {
 				//setError('loginusuario', '');
@@ -499,7 +499,7 @@ $(document).ready(
 					password: {required: true}
 			},
 			messages: { usuario: {required: "<img id='usuarioerror' src='images/unchecked.gif' hovertext='Ingrese el usuario.' />"},
-						password: {required: "<img id='passworderror' src='images/unchecked.gif' hovertext='Ingrese el password.' />"},
+						password: {required: "<img id='passworderror' src='images/unchecked.gif' hovertext='Ingrese el password.' />"}
 			},
 			submitHandler: function() {
 				setError('loginusuario', '');
