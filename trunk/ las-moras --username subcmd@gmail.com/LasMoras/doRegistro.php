@@ -47,8 +47,8 @@
 					$res = mysql_query($query,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
 					// login
 					$_SESSION['Login'] = "1";
-					$_SESSION['Nombre'] = $nombre;
-					$_SESSION['Apellido'] = $apellido;
+					$_SESSION['Nombre'] = $_POST['nombre'];
+					$_SESSION['Apellido'] = $_POST['apellido'];
 					$_SESSION['Id'] = $returnInsert;
 					$output = '{ "success": "yes", "error": "" , "nombre": "' .$_POST['nombre'] . '", "apellido": "' .$_POST['apellido']. '"}';
 				}

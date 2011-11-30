@@ -22,6 +22,7 @@
 		$mail->Subject    = COMPARTIR_SUBJECT;
 		$mail->AltBody    = COMPARTIR_BODY_ALT;
 		$body             = $mail->getFile('compartir.html');
+		$body = str_replace('{SERVER_NAME}', SERVER_NAME, $body);
 		$mail->MsgHTML("$body");
 		$mail->AddAddress("$email");
 		if(!$mail->Send()) {

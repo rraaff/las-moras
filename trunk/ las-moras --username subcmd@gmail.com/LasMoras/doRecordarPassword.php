@@ -41,6 +41,7 @@
 			$body = str_replace('{APELLIDO}', $apellido, $body);
 			$body = str_replace('{USUARIO}', $usuario, $body);
 			$body = str_replace('{PASSWORD}', $password, $body);
+			$body = str_replace('{SERVER_NAME}', SERVER_NAME, $body);
 			$mail->MsgHTML("$body");
 			$mail->AddAddress("$emailto", "$nombre $apellido");
 			if(!$mail->Send()) {
