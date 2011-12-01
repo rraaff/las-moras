@@ -1,0 +1,9 @@
+Correr primero en mysql el file database.sql como usuario root.
+
+Correr como usuario LASMORAS_USER, password LASMORAS_USER y base LASMORAS el file lasmoras.sql.
+
+Decomprimir el zip.
+
+Modificar los archivos de constantes:
+1) constantes.php
+2) constantes_mail.php

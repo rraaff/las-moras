@@ -21,6 +21,7 @@ $ticket = mysql_fetch_array($result_tickets);
 // Cierre conexion
 mysql_close($connection);
 ?>
+<div>
 Ticket: <?php echo $ticket['ticket']?><br>
 Fecha: <?php echo $ticket['fechaCarga']?><br>
 Nombre: <?php echo $ticket['nombre']?><br>
@@ -28,7 +29,7 @@ Apellido: <?php echo $ticket['apellido']?><br>
 Documento: <?php echo $ticket['documento']?><br>
 Email: <?php echo $ticket['email']?><br>
 Usuario: <?php echo $ticket['usuario']?><br>
-
+</div>
 <?php 
 } else {
 ?>
