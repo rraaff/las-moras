@@ -39,7 +39,8 @@ CREATE  TABLE `TICKETS` (
   `ticket` VARCHAR(255) NULL ,
   `fechaCarga` DATETIME NOT NULL,
   `ganador` INT NULL ,
-  PRIMARY KEY (`id`) );
+  PRIMARY KEY (`id`),
+  INDEX `TicketCode` (`ticket` ASC) );
   
 CREATE  TABLE `INSTANT_WIN` (
   `id` INT NOT NULL AUTO_INCREMENT ,

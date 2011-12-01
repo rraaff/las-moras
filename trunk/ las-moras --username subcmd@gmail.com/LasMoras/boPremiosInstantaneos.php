@@ -112,6 +112,7 @@ $(document).ready(
 			<td>Hasta</td>
 			<td>Estado</td>
 			<td>Ganador</td>
+			<td>Codigo</td>
 			<td>Borrar</td>
 		</tr>
 <?php
@@ -143,6 +144,15 @@ $(document).ready(
 				echo '-';
 			}
 		?></td>
+		<td><?php 
+			if (is_null($iw['ticketID'])) { ?>
+     				-
+     		<?php 
+				} else {
+				    echo $iw['ticket'];
+				}
+			?>
+		</td>
 		<td><?php 
 			if (is_null($iw['ticketID'])) {
 				if ($iw['FIN_UNIX'] > $today) {
