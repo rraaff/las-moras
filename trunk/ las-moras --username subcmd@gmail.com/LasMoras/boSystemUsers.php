@@ -62,7 +62,7 @@
 	<tr>
 		<td><?php echo $iw['fechaCreacion'] ?></td>
 		<td><?php echo $iw['ultimoLogin'] ?></td>
-		<td><?php echo $iw['cantidadCodigos'] ?></td>
+		<td><a href="javascript:viewTickets('<?php echo $iw['documento'] ?>')"><?php echo $iw['cantidadCodigos'] ?></a></td>
 		<td><?php 
 			if (is_null($iw['ultimaCarga'])) {
    				echo '-';
@@ -114,5 +114,14 @@ $(document).ready(
 	)
 </script>
 </div>
+<form method="POST" id="viewTicketsForms" action="boTickets.php">
+<input type="hidden" name="documento" id="documento" value="">
+</form>
+<script>
+function viewTickets(doc) {
+	document.getElementById('documento').value = doc;
+	$('#viewTicketsForms').submit();
+}
+</script>
 </body>
 </html>
