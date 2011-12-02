@@ -20,6 +20,9 @@
     <a href="boSystemUsers.php">Reporte de usuarios</a>
   </li>
   <li>
+    <a href="boTickets.php">Reporte de tickets</a>
+  </li>
+  <li>
     <a href="boLogout.php">Salir</a>
   </li>
 </ul>
