@@ -1,5 +1,6 @@
 <?php 
 	include("include/headers.php");
+	require("include/funcionesDB.php");
 	session_start();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -45,7 +46,9 @@ em.error { color: black; }
 </style>
 </head>
 <body>
+<?php echo  SOCIAL_HUB_STANDARD; ?>
 <div id="fb-root"></div>
+<?php if (SOCIAL_HUB_STANDARD == 'TRUE') { ?>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
@@ -53,6 +56,7 @@ em.error { color: black; }
   js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<?php } ?>
 
 <div id="centralContent">
 	<div id="promoButtons"><a href='#' class='cargaCodigo' id="cargaCodigo"><img src="images/buttons/cargaElCodigo.gif" width="336" height="45" border="0"></a><a href="premios.html"><img src="images/buttons/miraLosPremios.gif" width="336" height="45" border="0"></a></div>
@@ -66,9 +70,16 @@ em.error { color: black; }
 		<?php } ?>
 		</div>
 		<div id="socialHub">
-			<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>
-			<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-lang="es">Twittear</a><br>
-			<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+			<?php if (SOCIAL_HUB_STANDARD == 'TRUE') { ?>
+				<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+				<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-lang="es">Twittear</a><br>
+				<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+			<?php } else { ?>
+				<a href="javascript:window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(location.href) + '&amp;amp;t=Read+This+Manual'); return false;">
+					<img src="images/buttons/fb.gif" border="0"></a>
+				<a href="javascript:window.open('http://twitter.com/home?status=' + encodeURIComponent('<?php echo TWITTER_STAT?>') + encodeURIComponent(location.href)); return false;">
+					<img src="images/buttons/tw.gif" border="0"></a>
+			<?php } ?>
 			<a href="javascript:showCompartirEmailLigthBox()"><img src="images/buttons/email.gif" width="39" height="30" border="0"></a></div>
 	</div>
 </div>
