@@ -1,9 +1,20 @@
-Correr primero en mysql el file database.sql como usuario root.
+Instalación
+===========
 
-Correr como usuario LASMORAS_USER, password LASMORAS_USER y base LASMORAS el file lasmoras.sql.
+1) Descomprimir el zip
 
-Decomprimir el zip.
+2) Correr resources/database.sql como root del mysql
 
-Modificar los archivos de constantes:
-1) constantes.php
-2) constantes_mail.php
+3) Correr resources/lasmoras.sql como LASMORAS_USER/LASMORAS_USER base LASMORAS
+
+4) Copiar los archivos al root del servidor
+
+4) Modificar constantes.php con los datos del server de la base (constante DB_SERVER)
+
+
+Accesos
+=======
+
+Sitio público: ./index.php
+
+BackOffice: ./boLogin.php
