@@ -5,6 +5,6 @@
 	define('DB_PASS','LASMORAS_USER');
 	define('DB_NAME','LASMORAS');
 	
-	define('SOCIAL_HUB_STANDARD','TRUE');
+	define('SOCIAL_HUB_STANDARD','FALSE');
 	define('TWITTER_STAT','Recomendando Las Moras: ');
 ?>
