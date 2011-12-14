@@ -23,7 +23,7 @@
 <script src="js/popup.js" type="text/javascript"></script>
 <script type='text/javascript'>
 	function openLegal(){
-		openPopupWindow('basesycondiciones.html', 481, 460, 0, 0, false, false, 'bases', false);
+		openPopupWindow('basesycondiciones.html', 481, 460, 0, 0, false, true, 'bases', false);
 	}
 
 <?php if (isset($_SESSION['Login']) && $_SESSION['Login'] == 1) { ?>
