@@ -8,9 +8,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Finca Las Moras - Premia tu forma de disfrutar la vida</title>
+<title>Finca Las Moras - Recompensa tu forma de disfrutar la vida</title>
 <meta name="keywords" content="Vino, Tinto, Blanco, Finca Las Moras, Beber con moderaci&oacute;n" />
-<meta name="description" content="Finca Las Moras premia tu forma de disfrutar la vida" />
+<meta name="description" content="Finca Las Moras recompensa tu forma de disfrutar la vida" />
 <meta name="AUTHOR" content="That Day in London - Agencia Interactiva & Dise&ntilde;o - para Publiquest" />
 <link rel="icon" href="./favicon.ico" type="icon"/>
 <!-- Contact Form CSS files -->
@@ -24,6 +24,13 @@
 <script type='text/javascript'>
 	function openLegal(){
 		openPopupWindow('basesycondiciones.html', 481, 460, 0, 0, false, true, 'bases', false);
+	}
+    function openTerm(){
+		openPopupWindow('terminos.html', 481, 460, 0, 0, false, true, 'terminos', false);
+	}
+	
+	function openPol(){
+		openPopupWindow('politicas.html', 481, 460, 0, 0, false, true, 'politicas', false);
 	}
 
 <?php if (isset($_SESSION['Login']) && $_SESSION['Login'] == 1) { ?>
@@ -45,7 +52,7 @@ em.error { color: black; }
 #warning { display: none; }
 </style>
 </head>
-<body>
+<body onLoad="javascript:showEdadproteccionLigthBox();">
 <?php echo  SOCIAL_HUB_STANDARD; ?>
 <div id="fb-root"></div>
 <?php if (SOCIAL_HUB_STANDARD == 'TRUE') { ?>
@@ -59,19 +66,24 @@ em.error { color: black; }
 <?php } ?>
 
 <div id="centralContent">
-	<div id="promoButtons"><a href='#' class='cargaCodigo' id="cargaCodigo"><img src="images/buttons/cargaElCodigo.gif" width="336" height="45" border="0"></a><a href="premios.html"><img src="images/buttons/miraLosPremios.gif" width="336" height="45" border="0"></a></div>
+	<div id="promoButtons"><a href='#' class='cargaCodigo' id="cargaCodigo"><img src="images/buttons/cargaElCodigo.gif" width="336" height="73" border="0"></a><a href="premios.html" target="_blank"><img src="images/buttons/miraLosPremios.gif" width="336" height="45" border="0"></a></div>
 	<div id="footer">
-		<div id="legal"><a href="javascript:openLegal();">Bases y condiciones del sitio</a><br/><br/>
-		<?php if (!(isset($_SESSION['Login']) && $_SESSION['Login'] == 1)) { ?>
-			<a id="logoutLink" style="visibility:hidden;" href="logout.php">No soy</a>
-		<?php } else {
+		<div id="legal">
+		  <p><a href="javascript:openLegal();">Bases y condiciones</a> - <a href="javascript:openPol();">Pol&iacute;tica de Privacidad</a> - <a href="javascript:openTerm();">T&eacute;rminos y Condiciones</a><br/><br/>
+		    
+		    <?php if (!(isset($_SESSION['Login']) && $_SESSION['Login'] == 1)) { ?>
+		    
+		    <a id="logoutLink" style="visibility:hidden;" href="logout.php">No soy</a>
+		    
+		    <?php } else {
 		?>
-			<a id="logoutLink" href="logout.php">No soy <?php echo $_SESSION['Nombre'] ?> <?php echo $_SESSION['Apellido'] ?></a>
+		    
+		    <a id="logoutLink" href="logout.php">No soy <?php echo $_SESSION['Nombre'] ?> <?php echo $_SESSION['Apellido'] ?></a></p>
 		<?php } ?>
-		</div>
+</div>
 		<div id="socialHub">
 			<?php if (SOCIAL_HUB_STANDARD == 'TRUE') { ?>
-				<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>
 				<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-lang="es">Twittear</a><br>
 				<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
 			<?php } else { ?>
@@ -119,7 +131,7 @@ em.error { color: black; }
 			<tr>
 				<td></td>
 				<td><input type="text" name="documento"></td>
-				<td></td>
+				<td width="25" id="documentoerr"></td>
 			</tr>
 			<tr>
 				<td colspan="3" height="20"><img src="images/null.gif" width="20" height="20"></td>
@@ -129,35 +141,13 @@ em.error { color: black; }
 				<td><input type="text" name="email"></td>
 				<td width="25" id="emailerr"></td>
 			</tr>
+            <tr>
+          		 <td colspan="3" height="20"><img src="images/null.gif" width="20" height="20"></td>
+            </tr>
 			<tr>
-				<td colspan="3" height="24"><img src="images/null.gif" width="20" height="24"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="text" name="edad"></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td colspan="3" height="24"><img src="images/null.gif" width="20" height="24"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="text" name="usuario"></td>
-				<td width="25" id="usuarioerr"></td>
-			</tr>
-			<tr>
-				<td colspan="3" height="22"><img src="images/null.gif" width="20" height="22"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="password" name="password"></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td colspan="3" height="20"><img src="images/null.gif" width="20" height="20"></td>
-			</tr>
-			<tr>
-				<td colspan="3" align="right"><input type="submit" class="submitButton" value=" "></td>
+				<td width="80" height="20">SI EST&Aacute;S REGISTRADO, <br><a href="javascript:register();">HAC&Eacute; CLIC AC&Aacute;.</a></td>
+
+				<td colspan="2" align="right"><input type="submit" class="submitButton" value=" "></td>
 			</tr>
 		</table>
 	</form>
@@ -169,7 +159,7 @@ em.error { color: black; }
 		<table width="396" border="0" cellpadding="0" cellspacing="0">
 			<tr>
 				<td width="80" height="30"><img src="images/null.gif" width="80" height="10"></td>
-				<td width="300"><input type="text" name="usuario"></td>
+				<td width="300"><input type="text" name="email"></td>
 				<td width="16" id="loginusuarioerr"></td>
 			</tr>
 			<tr>
@@ -177,7 +167,7 @@ em.error { color: black; }
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="password" name="password"></td>
+				<td><input type="text" name="documento"></td>
 				<td></td>
 			</tr>
 			<tr>
@@ -190,9 +180,9 @@ em.error { color: black; }
 				<td colspan="3">
 					<table border="0" cellpadding="0" cellspacing="0">
 						<tr>
-							<td>SI NO EST&Aacute;S REGISTRADO, <br><a href="javascript:register()">HAC&Eacute; CLIC AC&Aacute;.</a></td>
+							<td><!--SI NO EST&Aacute;S REGISTRADO, <br><a href="javascript:register()">HAC&Eacute; CLIC AC&Aacute;.</a>--></td>
 							<td width="60"></td>
-							<td>OLVIDASTE TU PASSWORD?,<br><a href="javascript:recordarPassword()">HAC&Eacute; CLIC AC&Aacute;.</a></td>
+							<td></td>
 						</tr>
 					</table>
 				</td>
@@ -209,6 +199,43 @@ em.error { color: black; }
 				<td width="140" height="30"></td>
 				<td width="241"><input type="text" name="codigo" id="codigo"></td>
 				<td width="25" id="codigoerr"></td>
+			</tr>
+            <tr>
+				<td width="140" height="50"></td>
+				<td width="241"><select name="supermercado" id="supermercado">
+                					<option value="">-Seleccione-</option>
+                					<option value="carrefour">Carrefour</option>
+                   					<option value="coto">Coto</option>
+                   					<option value="disco">Disco</option>
+									          <option value="jumbo">Jumbo</option>
+                   					<option value="walmart">Walmart</option>
+                            <option value="dia">D&iacutea</option>
+                            
+                            <option value="vea">Vea</option>
+                            
+                            <option value="eki">Eki</option>
+                	            </select>
+                </td>
+				<td width="25" id="supermercadoerr"></td>
+			</tr>
+             <tr>
+				<td width="140" height="30"></td>
+				<td width="241"><select name="botellas" id="botellas">
+                					<option value="">-Cantidad-</option>
+                                    <option value="1">1</option>
+                   					<option value="2">2</option>
+                   					<option value="3">3</option>
+									<option value="4">4</option>
+                   					<option value="5">5</option>
+                					<option value="6">6</option>
+                   					<option value="7">7</option>
+                   					<option value="8">8</option>
+									<option value="9">9</option>
+                   					<option value="10">10</option>
+                   					<option value="10+">10+</option>
+                	            </select>
+                </td>
+				<td width="25" id="botellaerr"></td>
 			</tr>
 			<tr>
 				<td colspan="3" height="50"></td>
@@ -274,7 +301,7 @@ em.error { color: black; }
 			<td height="300"><img src="images/null.gif" width="1" height="300"></td>
 		</tr>
 		<tr>
-			<td align="right"><a href="javascript:closeCurrentModal();"><img src="images/buttons/ingresar.png" width="159" height="45" border="0"></a></td>
+			<td align="right"><a href="javascript:registerthnk()"><img src="images/buttons/ingresar.png" width="159" height="45" border="0"></a></td>
 		</tr>
 	</table>
 </div>
@@ -311,6 +338,19 @@ em.error { color: black; }
 		</tr>
 		<tr>
 			<td align="right"><a href="javascript:closeCurrentModal();"><img src="images/buttons/cerrar.png" width="157" height="44" border="0"></a></td>
+		</tr>
+	</table>
+</div>
+
+<!-- modal edad proteccion-->
+<div id="basic-modal-Edadproteccion">
+	<table width="420" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td height="130"><img src="images/null.gif" width="1" height="143"></td>
+		</tr>
+		<tr>
+			<td align="left" style="padding-left:60px"><a href="javascript:closeCurrentModal();"><img src="images/null.gif" width="157" height="44" border="0"></a></td>
+            <td align="right"><a href="http://www.google.com.ar" target="_self"><img src="images/null.gif" width="157" height="44" border="0"></a></td>
 		</tr>
 	</table>
 </div>
@@ -383,11 +423,24 @@ function showClaveEnviadaLigthBox() {
 	});
 }
 
+function showEdadproteccionLigthBox() {
+	$('#basic-modal-Edadproteccion').modal({
+		overlayId: 'Edadproteccion-overlay',
+		containerId: 'Edadproteccion-container',
+		close:false,
+		onClose: function (dialog) {closeAnimateCurrentDialog(dialog);}
+	});
+}
+
 function showRegistradoLigthBox() {
 	$('#basic-modal-graciasPorRegistrarte').modal({
 		overlayId: 'registroGracias-overlay',
 		containerId: 'registroGracias-container',
-		onClose: function (dialog) {closeAnimateCurrentDialog(dialog);}
+		onClose: function (dialog) {
+			$.modal.close();
+			showCargaCodigoLigthBox();
+			//closeAnimateCurrentDialog(dialog);
+			}
 	});
 }
 
@@ -411,7 +464,8 @@ jQuery(function ($) {
 		if (logged) {
 			showCargaCodigoLigthBox();
 		} else {
-			showLoginLigthBox();
+			//showLoginLigthBox();
+			showRegistroLigthBox();
 		}
 		return true;
 	});
@@ -473,10 +527,10 @@ $(document).ready(
 			rules: { nombre: {required: true},
 					apellido: {required: true},
 					documento: {required: true, maxlength: 9},
-					email: {required: true, email: true},
-					edad: {required: true, min: 18},
+					email: {required: true, email: true}
+					/*edad: {required: true, min: 18},
 					usuario: {required: true},
-					password: {required: true}
+					password: {required: true}*/
 			},
 			messages: {
 				nombre: {required: "<img id='usuarioerror' src='images/unchecked.gif' hovertext='Ingrese el nombre.' />"}, 
@@ -484,12 +538,12 @@ $(document).ready(
 				documento: {required: "<img id='docerror' src='images/unchecked.gif' hovertext='Ingrese el documento.' />",
 						maxlength: "<img id='docerror' src='images/unchecked.gif' hovertext='El documento debe tener hasta 9 numeros.' />"},
 				email: {required: "<img id='emailerror' src='images/unchecked.gif' hovertext='Ingrese el email.' />",
-						email: "<img id='emailerror' src='images/unchecked.gif' hovertext='Ingrese un email valido.' />"},
-				edad: {required: "<img id='edaderror' src='images/unchecked.gif' hovertext='Ingrese la edad.' />",
+						email: "<img id='emailerror' src='images/unchecked.gif' hovertext='Ingrese un email valido.' />"}
+				/*edad: {required: "<img id='edaderror' src='images/unchecked.gif' hovertext='Ingrese la edad.' />",
 						digits: "<img id='edaderror' src='images/unchecked.gif' hovertext='Ingrese un numero.' />",
 						min: "<img id='edaderror' src='images/unchecked.gif' hovertext='Para participar de la promo debe se mayor de edad.' />"},
 				usuario: {required: "<img id='usuarioerror' src='images/unchecked.gif' hovertext='Ingrese el usuario.' />"},
-				password: {required: "<img id='passworderror' src='images/unchecked.gif' hovertext='Ingrese el password.' />"}
+				password: {required: "<img id='passworderror' src='images/unchecked.gif' hovertext='Ingrese el password.' />"}*/
 			},
 			submitHandler: function() {
 				//setError('loginusuario', '');
@@ -506,11 +560,11 @@ $(document).ready(
 			errorPlacement: function(error, element) {
 				error.appendTo( element.parent("td").next("td") );
 			},
-			rules: { usuario: {required: true},
-					password: {required: true}
+			rules: { email: {required: true},
+					documento: {required: true}
 			},
-			messages: { usuario: {required: "<img id='usuarioerror' src='images/unchecked.gif' hovertext='Ingrese el usuario.' />"},
-						password: {required: "<img id='passworderror' src='images/unchecked.gif' hovertext='Ingrese el password.' />"}
+			messages: { email: {required: "<img id='usuarioerror' src='images/unchecked.gif' hovertext='Ingrese el email.' />"},
+						documento: {required: "<img id='passworderror' src='images/unchecked.gif' hovertext='Ingrese el documento.' />"}
 			},
 			submitHandler: function() {
 				setError('loginusuario', '');
@@ -548,9 +602,13 @@ $(document).ready(
 			errorPlacement: function(error, element) {
 				error.appendTo( element.parent("td").next("td") );
 			},
-			rules: { codigo: {required: true}
+			rules: { codigo: {required: true},
+					supermercado: {required: true},
+					botellas: {required: true}
 			},
-			messages: { codigo: {required: "<img id='codigoerror' src='images/unchecked.gif' hovertext='Ingrese el codigo.' />"}
+			messages: { codigo: {required: "<img id='codigoerror' src='images/unchecked.gif' hovertext='Ingrese el codigo.' />"},
+						supermercado: {required: "<img id='supermercadoerror' src='images/unchecked.gif' hovertext='Seleccione el supermercado.' />"},
+						botellas: {required: "<img id='botellaserror' src='images/unchecked.gif' hovertext='Seleccine la cantidad de botellas.' />"}
 			},
 			submitHandler: function() {
 	            $('#ticketForm').ajaxSubmit({
@@ -603,8 +661,8 @@ function closeCurrentModal() {
 }
 
 function postRegisto(data) {
-	setError('usuario', '');
 	setError('email', '');
+	setError('documento', '');
 	if (data.success == 'yes') {
 		logged = true;
 		$.modal.close();
@@ -612,7 +670,7 @@ function postRegisto(data) {
 		document.getElementById("logoutLink").style.visibility = "visible";
 		showRegistradoLigthBox();
 	} else {
-		setError('usuario', data.usuario);
+		setError('documento', data.documento);
 		setError('email', data.email);
 	}
 }
@@ -649,10 +707,21 @@ function postCompartirEmail(data) {
 	}
 }
 
-function register() {
+/*function register() {
 	$.modal.close();
 	showRegistroLigthBox();
+}*/
+function register() {
+	$.modal.close();
+	showLoginLigthBox();
 }
+
+function registerthnk() {
+	$.modal.close();
+	//console.log("hola");
+	showCargaCodigoLigthBox();
+}
+
 
 function recordarPassword() {
 	$.modal.close();

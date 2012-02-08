@@ -9,17 +9,21 @@
 
 	$userID = $_SESSION['Id'];
 	$ticket = $_POST['codigo'];
+	$supermercado = $_POST['supermercado'];
+	$botellas = $_POST['botellas'];
 	
 	$userID = quote_smart($userID, $connection);
 	$ticket = quote_smart($ticket, $connection);
-	
+	$supermercado = quote_smart($supermercado, $connection);
+	$botellas = quote_smart($botellas, $connection);	
+
 	$SQL_tickets = "SELECT * FROM TICKETS WHERE ticket = $ticket";
 	$result_tickets = mysql_query($SQL_tickets);
 	$num_rows_tickets = mysql_num_rows($result_tickets);
 	if ($result_tickets) {
 		// Si no fue cargado, lo cargo
 		if ($num_rows_tickets == 0) {
-			$insertTicket = "INSERT INTO TICKETS (systemuserID, ticket, fechaCarga) VALUES ($userID, $ticket, NOW() )";
+			$insertTicket = "INSERT INTO TICKETS (systemuserID, ticket,supermercado,botellas, fechaCarga) VALUES ($userID, $ticket,$supermercado,$botellas, NOW())";
 			$res = mysql_query($insertTicket,$connection);// or die ("Error en insert ".mysql_error()."\n".$query);
 			$returnInsert = mysql_insert_id($connection);
 			
@@ -49,4 +53,4 @@
 	$output = str_replace("\r", "", $output);
 	$output = str_replace("\n", "", $output);
 	echo $output;
-?>
+?>			

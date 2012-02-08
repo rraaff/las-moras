@@ -24,7 +24,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <title>Finca Las Moras - Premia tu forma de disfrutar la vida - BACKOFFICE</title>
 <meta name="keywords" content="Vino, Tinto, Blanco, Finca Las Moras, Beber con moderaci�n" />
-<meta name="description" content="Finca Las Moras premia tu forma de disfrutar la vida" />
+<meta name="description" content="Finca Las Moras recompensa tu forma de disfrutar la vida" />
 <meta name="AUTHOR" content="That Day in London - Agencia Interactiva & Dise�o - para Publiquest" />
 <link rel="icon" href="./favicon.ico" type="icon"/>
 <!-- Contact Form CSS files -->
