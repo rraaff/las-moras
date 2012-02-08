@@ -28,7 +28,7 @@
 				$_SESSION['boApellido'] = $user['apellido'];
 				header ("Location: boHome.php");
 			} else {
-				$errorMessage = "No existe el usuario";
+				$errorMessage = "El usuario no es valido";
 			}
 		} else {
 			$errorMessage = "Error de conexion";
@@ -42,7 +42,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <title>Finca Las Moras - Premia tu forma de disfrutar la vida - BACKOFFICE</title>
 <meta name="keywords" content="Vino, Tinto, Blanco, Finca Las Moras, Beber con moderaci�n" />
-<meta name="description" content="Finca Las Moras premia tu forma de disfrutar la vida" />
+<meta name="description" content="Finca Las Moras recompensa tu forma de disfrutar la vida" />
 <meta name="AUTHOR" content="That Day in London - Agencia Interactiva & Dise�o - para Publiquest" />
 <link rel="icon" href="./favicon.ico" type="icon"/>
 <!-- Contact Form CSS files -->
@@ -117,9 +117,9 @@ input {
 	<div id="aclaracion">
 		<p>Bienvenido al BackOffice de la promoci&oacute;n<br/><span class="remarcado">RECOMPENSA TU FORMA DE DISFRUTAR LA VIDA.</span></p>
 	</div>
-	<div id="field1"><INPUT TYPE = 'TEXT' Name ='usuario'  value="<?PHP print $_POST['usuario'];?>" maxlength="20"></div>
+	<div id="field1"><INPUT TYPE = 'TEXT' Name ='usuario'  value="" maxlength="20"></div>
 	<div id="field2">
-		<input type = 'password' name ='password'  value="<?PHP print $_POST['password'];?>" maxlength="20">
+		<input type = 'password' name ='password'  value="" maxlength="20" AUTOCOMPLETE="off">
 	</div>
 	<div id="errorMessage"><span class="remarcado"><?PHP print $errorMessage;?></span></div>
 	<div id="buttonAreas"><input type="submit" name="Submit1" value=" " class="ingresarButton"></div>

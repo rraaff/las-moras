@@ -7,13 +7,13 @@
 	$connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la conexion");
 	mysql_select_db(DB_NAME,$connection);
 
-	$usuario = $_POST['usuario'];
-	$password = $_POST['password'];
+	$email = $_POST['email'];
+	$documento = $_POST['documento'];
 	
-	$usuario = quote_smart($usuario, $connection);
-	$password = quote_smart($password, $connection);
+	$email = quote_smart($email, $connection);
+	$documento = quote_smart($documento, $connection);
 	
-	$SQL = "SELECT * FROM SYSTEMUSER WHERE usuario = $usuario AND password = $password";
+	$SQL = "SELECT * FROM SYSTEMUSER WHERE email = $email AND documento = $documento";
 	$result = mysql_query($SQL);
 	$num_rows = mysql_num_rows($result);
 	
