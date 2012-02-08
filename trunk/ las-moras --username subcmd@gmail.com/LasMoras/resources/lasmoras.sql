@@ -37,6 +37,8 @@ CREATE  TABLE `TICKETS` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `systemuserID` INT NOT NULL ,
   `ticket` VARCHAR(255) NULL ,
+  `supermercado` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `botellas` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `fechaCarga` DATETIME NOT NULL,
   `ganador` INT NULL ,
   PRIMARY KEY (`id`),
